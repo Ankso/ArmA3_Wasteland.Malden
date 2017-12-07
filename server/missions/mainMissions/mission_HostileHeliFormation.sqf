@@ -21,17 +21,17 @@ _setupObjects =
 
 	_heliChoices =
 	[
-		["B_Heli_Transport_01_F", ["B_Heli_Light_01_dynamicLoadout_F", "pawneeNormal"]],
-		["B_Heli_Transport_01_camo_F", ["O_Heli_Light_02_dynamicLoadout_F", "orcaDAGR"]],
-		["B_Heli_Transport_01_F", "I_Heli_light_03_dynamicLoadout_F"]
+		["RHS_MI24P_vdv", "RHS_MI24P_vdv"],
+		["RHS_Ka52_vvsc", "RHS_Ka52_vvsc"],
+		["RHS_AH64D_noradar", "RHS_AH64D_noradar"]
 	];
 
-	if (missionDifficultyHard) then
+	/*if (missionDifficultyHard) then
 	{
 		(_heliChoices select 0) set [0, "B_Heli_Attack_01_dynamicLoadout_F"];
 		(_heliChoices select 1) set [0, "O_Heli_Attack_02_dynamicLoadout_F"];
 		(_heliChoices select 2) set [0, "O_Heli_Attack_02_dynamicLoadout_F"];
-	};
+	};*/
 
 	_convoyVeh = _heliChoices call BIS_fnc_selectRandom;
 
@@ -71,25 +71,9 @@ _setupObjects =
 		_soldier = [_aiGroup, _position] call createRandomSoldierC;
 		_soldier moveInDriver _vehicle;
 
-		switch (true) do
-		{
-			case (_type isKindOf "Heli_Transport_01_base_F"):
-			{
-				// these choppers have 2 turrets so we need 2 gunners
-				_soldier = [_aiGroup, _position] call createRandomSoldierC;
-				_soldier moveInTurret [_vehicle, [1]];
-
-				_soldier = [_aiGroup, _position] call createRandomSoldierC;
-				_soldier moveInTurret [_vehicle, [2]];
-			};
-
-			case (_type isKindOf "Heli_Attack_01_base_F" || _type isKindOf "Heli_Attack_02_base_F"):
-			{
-				// these choppers need 1 gunner
-				_soldier = [_aiGroup, _position] call createRandomSoldierC;
-				_soldier moveInGunner _vehicle;
-			};
-		};
+		// these choppers need 1 gunner
+		_soldier = [_aiGroup, _position] call createRandomSoldierC;
+		_soldier moveInGunner _vehicle;
 
 		// remove flares because it overpowers AI choppers
 		if (_type isKindOf "Air") then

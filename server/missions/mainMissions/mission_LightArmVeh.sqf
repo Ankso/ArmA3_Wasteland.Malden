@@ -15,12 +15,12 @@ _setupVars =
 {
 	_vehicleClass =
 	[
-		"B_MRAP_01_hmg_F",
-		"B_MRAP_01_gmg_F",
-		"O_MRAP_02_hmg_F",
-		"O_MRAP_02_gmg_F",
-		"I_MRAP_03_hmg_F",
-		"I_MRAP_03_gmg_F"
+		"rhsusf_m1025_d_m2",
+		"rhs_tigr_sts_3camo_msv",
+		"rhsusf_m1220_m2_usarmy_d",
+		"rhsusf_m1230_m2_usarmy_d",
+		"rhsusf_m1220_mk19_usarmy_d",
+		"rhsgref_BRDM2_vmf"
 	] call BIS_fnc_selectRandom;
 
 	_missionType = "Light Armed Vehicle";

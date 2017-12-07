@@ -37,62 +37,62 @@ for "_i" from 1 to _nbUnits do
 	removeHeadgear _unit;
 	removeGoggles _unit;
 
-	_unit addVest "V_PlateCarrier1_rgr";
-	_unit addMagazine "30Rnd_556x45_Stanag";
-	_unit addMagazine "30Rnd_556x45_Stanag";
-	_unit addMagazine "30Rnd_556x45_Stanag";
+	_unit addVest "rhs_6b23_ML_crew";
+	_unit addMagazine "rhs_30Rnd_545x39_7N10_AK";
+	_unit addMagazine "rhs_30Rnd_545x39_7N10_AK";
+	_unit addMagazine "rhs_30Rnd_545x39_7N10_AK";
 
 	switch (true) do
 	{
 		// Grenadier every 3 units, starting from #2
 		case ((_i + 4) % 3 == 0):
 		{
-			_unit addUniform "U_B_CombatUniform_mcam_vest";
-			_unit addMagazine "1Rnd_HE_Grenade_shell";
-			_unit addWeapon "arifle_TRG21_GL_F";
-			_unit addMagazine "1Rnd_HE_Grenade_shell";
-			_unit addMagazine "1Rnd_HE_Grenade_shell";
+			_unit addUniform "rhsgref_uniform_para_ttsko_mountain";
+			_unit addMagazine "rhs_VOG25";
+			_unit addWeapon "rhs_weap_ak74_gp25";
+			_unit addMagazine "rhs_VOG25";
+			_unit addMagazine "rhs_VOG25";
 		};
 		// PCML every 6 units, starting from #6
 		case (_i % 6 == 0):
 		{
-			_unit addUniform "U_B_CombatUniform_mcam_tshirt";
-			_unit addBackpack "B_Kitbag_mcamo";
-			_unit addWeapon "arifle_TRG20_F";
-			_unit addMagazine "NLAW_F";
-			_unit addWeapon "launch_NLAW_F";
-			_unit addMagazine "NLAW_F";
-			_unit addMagazine "NLAW_F";
+			_unit addUniform "rhsgref_uniform_para_ttsko_oxblood";
+			_unit addBackpack "rhsusf_falconii";
+			_unit addWeapon "rhs_weap_ak74";
+			_unit addMagazine "rhs_mag_pg15v_24";
+			_unit addWeapon "rhs_weap_rpg7";
+			_unit addMagazine "rhs_mag_pg15v_24";
+			_unit addMagazine "rhs_mag_pg15v_24";
 		};
 		// RPG-42 every 6 units, starting from #3
 		case ((_i + 3) % 6 == 0):
 		{
-			_unit addUniform "U_B_CombatUniform_mcam_tshirt";
-			_unit addBackpack "B_Kitbag_mcamo";
-			_unit addWeapon "arifle_TRG20_F";
-			_unit addMagazine "RPG32_F";
-			_unit addWeapon "launch_RPG32_F";
-			_unit addMagazine "RPG32_F";
-			_unit addMagazine "RPG32_F";
+			_unit addUniform "rhsgref_uniform_para_ttsko_oxblood";
+			_unit addBackpack "rhsusf_falconii";
+			_unit addWeapon "rhs_weap_ak74m";
+			_unit addMagazine "rhs_mag_pg15v_24";
+			_unit addWeapon "rhs_weap_rpg7";
+			_unit addMagazine "rhs_mag_pg15v_24";
+			_unit addMagazine "rhs_mag_pg15v_24";
 		};
 		// Rifleman
 		default
 		{
-			_unit addUniform "U_B_CombatUniform_mcam";
+			_unit addUniform "rhsgref_uniform_para_ttsko_urban";
 
 			if (_unit == leader _group) then
 			{
-				_unit addWeapon "arifle_TRG21_F";
+				_unit addWeapon "rhs_weap_ak74";
 				_unit setRank "SERGEANT";
 			}
 			else
 			{
-				_unit addWeapon "arifle_TRG20_F";
+				_unit addWeapon "rhs_weap_ak74m";
 			};
 		};
 	};
 
-	_unit addPrimaryWeaponItem "acc_flashlight";
+	_unit addPrimaryWeaponItem "rhs_acc_2dpZenit";
 	_unit enablegunlights "forceOn";
 
 	_unit addRating 1e11;

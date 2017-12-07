@@ -8,18 +8,18 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=850;
+		nextID=889;
 	};
 	class LayerIndexProvider
 	{
-		nextID=2;
+		nextID=11;
 	};
 	class Camera
 	{
-		pos[]={12562.121,24.328737,41.750977};
-		dir[]={0.83936763,-0.50337631,-0.20513996};
-		up[]={0.48898655,0.8640669,-0.11950736};
-		aside[]={-0.23741162,-7.2490366e-008,-0.97141439};
+		pos[]={1384.084,57.081585,765.0545};
+		dir[]={-0.36919609,-0.50211519,0.78203243};
+		up[]={-0.21436065,0.86480081,0.45405853};
+		aside[]={0.90429193,3.5762787e-007,0.42691481};
 	};
 };
 binarizationWanted=0;
@@ -46,7 +46,6 @@ addons[]=
 	"A3_Structures_F_Argo_Military_Fortifications",
 	"A3_Structures_F_EPA_Mil_Scrapyard",
 	"A3_Structures_F_Walls",
-	"A3_Structures_F_Argo",
 	"A3_Structures_F_Mil_BagFence",
 	"A3_Structures_F_Mil_Shelters",
 	"A3_Structures_F_Mil_Helipads",
@@ -228,8 +227,8 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="A3Wasteland Malden v1.4"; // it would be great if you could keep "A3" in the name, like "ABC A3Wasteland" instead of "ABC Wasteland" :)
-		overviewText="Wasteland survival sandbox by Team Wasteland - visit A3Wasteland.com for more details";
+		briefingName="A3Wasteland RHS Malden v1.4.0";
+		overviewText="Wasteland survival sandbox by Team Wasteland - Modified for RHS by Ankso - NO DLC BULLSHIT - visit A3Wasteland.com for more details";
 		resistanceWest=0;
 		timeOfChanges=3e+038;
 		startWeather=0;
@@ -3245,7 +3244,7 @@ class Mission
 						angles[]={0,0.34007692,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3253,14 +3252,12 @@ class Mission
 					};
 					id=183;
 					type="C_man_1_1_F";
-					atlOffset=0.49996948;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=182;
-			atlOffset=0.49996948;
 		};
 		class Item39
 		{
@@ -3381,12 +3378,14 @@ class Mission
 					};
 					id=191;
 					type="C_man_1_1_F";
+					atlOffset=0.21590805;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=190;
+			atlOffset=0.21590805;
 		};
 		class Item43
 		{
@@ -3435,7 +3434,7 @@ class Mission
 						angles[]={0,3.2976177,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3443,14 +3442,12 @@ class Mission
 					};
 					id=195;
 					type="C_man_1_1_F";
-					atlOffset=0.44863892;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=194;
-			atlOffset=0.44863892;
 		};
 		class Item45
 		{
@@ -3499,7 +3496,7 @@ class Mission
 						angles[]={0,1.795692,0};
 					};
 					side="Civilian";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						init="[this] spawn A3W_fnc_setupStoreNPC";
@@ -3507,12 +3504,14 @@ class Mission
 					};
 					id=199;
 					type="C_man_1_1_F";
+					atlOffset=0.6697998;
 				};
 			};
 			class Attributes
 			{
 			};
 			id=198;
+			atlOffset=0.6697998;
 		};
 		class Item47
 		{
@@ -8491,7 +8490,7 @@ class Mission
 					};
 					id=582;
 					type="Land_ATM_01_malden_F";
-					atlOffset=0.030632019;
+					atlOffset=0.020833969;
 				};
 				class Item28
 				{
@@ -8502,14 +8501,13 @@ class Mission
 						angles[]={0,4.6833544,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						init="[this] call A3W_fnc_setupMissionObject";
 					};
 					id=583;
 					type="Land_RampConcrete_F";
-					atlOffset=3.8146973e-005;
+					atlOffset=57.175522;
 				};
 				class Item29
 				{
@@ -8526,7 +8524,7 @@ class Mission
 					};
 					id=584;
 					type="Land_GH_Stairs_F";
-					atlOffset=0.95794296;
+					atlOffset=0.95037079;
 				};
 				class Item30
 				{
@@ -8543,7 +8541,7 @@ class Mission
 					};
 					id=585;
 					type="Land_GH_Stairs_F";
-					atlOffset=4.8256836;
+					atlOffset=4.8181076;
 				};
 				class Item31
 				{
@@ -8618,7 +8616,7 @@ class Mission
 					};
 					id=589;
 					type="Land_PierLadder_F";
-					atlOffset=3.4166565;
+					atlOffset=3.4090805;
 				};
 				class Item35
 				{
@@ -8636,7 +8634,7 @@ class Mission
 					};
 					id=590;
 					type="Land_PierLadder_F";
-					atlOffset=2.579052;
+					atlOffset=2.5714798;
 				};
 				class Item36
 				{
@@ -8654,7 +8652,7 @@ class Mission
 					};
 					id=591;
 					type="Land_PierLadder_F";
-					atlOffset=3.1735764;
+					atlOffset=3.1660004;
 				};
 				class Item37
 				{
@@ -8672,7 +8670,7 @@ class Mission
 					};
 					id=592;
 					type="Land_PierLadder_F";
-					atlOffset=2.5525513;
+					atlOffset=2.5449677;
 				};
 				class Item38
 				{
@@ -8708,7 +8706,7 @@ class Mission
 					};
 					id=594;
 					type="Land_PierLadder_F";
-					atlOffset=0.13716888;
+					atlOffset=0.1295929;
 				};
 				class Item40
 				{
@@ -8907,7 +8905,7 @@ class Mission
 					};
 					id=605;
 					type="C_Truck_02_box_F";
-					atlOffset=56.714001;
+					atlOffset=56.713951;
 				};
 				class Item51
 				{
@@ -8984,7 +8982,7 @@ class Mission
 					b=46.667999;
 					angle=268.336;
 					id=612;
-					atlOffset=3.8146973e-005;
+					atlOffset=57.802689;
 				};
 				class Item58
 				{
@@ -9601,7 +9599,7 @@ class Mission
 					};
 					id=647;
 					type="Land_CampingTable_small_F";
-					atlOffset=0.016965866;
+					atlOffset=0.010633469;
 				};
 				class Item93
 				{

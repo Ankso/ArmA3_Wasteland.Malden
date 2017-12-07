@@ -25,17 +25,17 @@ _setupObjects =
 
 	_vehChoices =
 	[
-		["B_Boat_Armed_01_minigun_F", "B_Heli_Transport_01_F"],
-		["O_Boat_Armed_01_hmg_F", ["O_Heli_Light_02_dynamicLoadout_F", "orcaDAGR"]],
-		["I_Boat_Armed_01_minigun_F", "I_Heli_light_03_dynamicLoadout_F"]
+		["B_Boat_Armed_01_minigun_F", "rhsgref_ins_Mi8amt"],
+		["O_Boat_Armed_01_hmg_F", ["rhs_ka60_c", "RHS_UH60M2_d"]],
+		["I_Boat_Armed_01_minigun_F", "RHS_UH1Y_d"]
 	];
 
-	if (missionDifficultyHard) then
+	/*if (missionDifficultyHard) then
 	{
 		(_vehChoices select 0) set [1, "B_Heli_Attack_01_dynamicLoadout_F"];
 		(_vehChoices select 1) set [1, "O_Heli_Attack_02_dynamicLoadout_F"];
 		(_vehChoices select 2) set [1, "O_Heli_Attack_02_dynamicLoadout_F"];
-	};
+	};*/
 
 	_convoyVeh = _vehChoices call BIS_fnc_selectRandom;
 
@@ -91,7 +91,7 @@ _setupObjects =
 				_soldier moveInTurret [_vehicle, [1]]; // rear gunner
 			};
 
-			case (_type isKindOf "Heli_Transport_01_base_F"):
+			case (_type isKindOf "RHS_UH1Y_d"):
 			{
 				// these choppers have 2 turrets so we need 2 gunners
 				_soldier = [_aiGroup, _position] call createRandomSoldierC;
@@ -180,7 +180,7 @@ _successExec =
 
 	_box1 = createVehicle ["Box_NATO_Wps_F", _lastPos, [], 5, "None"];
 	_box1 setDir random 360;
-	[_box1, "mission_USSpecial"] call fn_refillbox;
+	[_box1, "mission_RUSpecial"] call fn_refillbox;
 
 	_box2 = createVehicle ["Box_East_Wps_F", _lastPos, [], 5, "None"];
 	_box2 setDir random 360;

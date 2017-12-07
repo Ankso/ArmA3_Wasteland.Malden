@@ -9,10 +9,10 @@ if (!isServer) exitWith {};
 MainMissions =
 [
 	// Mission filename, weight
-	["mission_ArmedDiversquad", 1],
-	["mission_Coastal_Convoy", 1],
+	["mission_ArmedDiversquad", 0.5],
+	["mission_Coastal_Convoy", 0.5],
 	["mission_Convoy", 1],
-	["mission_HostileHeliFormation", 0.5],
+	["mission_HostileHeliFormation", 0.25],
 	["mission_APC", 1],
 	["mission_MBT", 1],
 	["mission_LightArmVeh", 1],
@@ -22,7 +22,7 @@ MainMissions =
 
 SideMissions =
 [
-	["mission_HostileHelicopter", 0.5],
+	["mission_HostileHelicopter", 0.25],
 	["mission_MiniConvoy", 1],
 	["mission_SunkenSupplies", 1],
 	["mission_TownInvasion", 2],
@@ -33,7 +33,7 @@ SideMissions =
 MoneyMissions =
 [
 	["mission_MoneyShipment", 1],
-	["mission_SunkenTreasure", 1]
+	["mission_SunkenTreasure", 0.5]
 ];
 
 MissionSpawnMarkers = (allMapMarkers select {["Mission_", _x] call fn_startsWith}) apply {[_x, false]};

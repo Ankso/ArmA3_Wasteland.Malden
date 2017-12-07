@@ -31,17 +31,17 @@ _player unlinkItem "ItemGPS";
 if (hmd _player != "") then { _player unlinkItem hmd _player };
 
 // Add NVG
-_player linkItem "NVGoggles";
+// _player linkItem "NVGoggles";
 
 _player addBackpack "B_AssaultPack_rgr";
 
-_player addMagazine "9Rnd_45ACP_Mag";
-_player addWeapon "hgun_ACPC2_F";
-_player addMagazine "9Rnd_45ACP_Mag";
-_player addMagazine "9Rnd_45ACP_Mag";
-_player addMagazine "9Rnd_45ACP_Mag";
+_player addMagazine "rhsusf_mag_15Rnd_9x19_FMJ";
+_player addWeapon "rhsusf_weap_m9";
+_player addMagazine "rhsusf_mag_15Rnd_9x19_FMJ";
+_player addMagazine "rhsusf_mag_15Rnd_9x19_FMJ";
+_player addMagazine "rhsusf_mag_15Rnd_9x19_FMJ";
 _player addItem "FirstAidKit";
-_player selectWeapon "hgun_ACPC2_F";
+_player selectWeapon "rhsusf_weap_m9";
 
 switch (true) do
 {
@@ -57,7 +57,7 @@ switch (true) do
 	};
 	case (["_sniper_", typeOf _player] call fn_findString != -1):
 	{
-		_player addWeapon "Rangefinder";
+		_player addWeapon "Binocular";
 	};
 };
 

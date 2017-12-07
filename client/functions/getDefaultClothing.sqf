@@ -47,7 +47,7 @@ switch (_side) do
 			};
 			default
 			{
-				if (_item == "uniform") then { _result = "U_B_CombatUniform_mcam" };
+				if (_item == "uniform") then { _result = "rhs_uniform_cu_ocp_10th" };
 				if (_item == "vest") then { _result = _defaultVest };
 			};
 		};
@@ -71,7 +71,7 @@ switch (_side) do
 			};
 			default
 			{
-				if (_item == "uniform") then { _result = "U_O_OfficerUniform_ocamo" };
+				if (_item == "uniform") then { _result = "rhs_uniform_flora_patchless_alt" };
 				if (_item == "vest") then { _result = _defaultVest };
 			};
 		};
@@ -95,7 +95,7 @@ switch (_side) do
 			};
 			default
 			{
-				if (_item == "uniform") then { _result = "U_I_CombatUniform" };
+				if (_item == "uniform") then { _result = "rhsgref_uniform_ttsko_mountain" };
 				if (_item == "vest") then { _result = _defaultVest };
 			};
 		};

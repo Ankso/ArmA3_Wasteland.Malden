@@ -15,21 +15,26 @@ _setupVars =
 {
 	_vehicleClass =
 	[
-		"B_APC_Wheeled_01_cannon_F",
-		"O_APC_Wheeled_02_rcws_F",
-		"I_APC_Wheeled_03_cannon_F",
-		"B_APC_Tracked_01_rcws_F",
-		"O_APC_Tracked_02_cannon_F",
-		"I_APC_tracked_03_cannon_F",
-		"B_APC_Tracked_01_AA_F",
-		"O_APC_Tracked_02_AA_F"
+		"rhs_bmp2_tv",
+		"rhs_prp3_tv",
+		"rhsusf_M1117_D",
+		"rhs_bmp1k_tv",
+		"rhs_btr80a_msv",
+		"rhs_btr80_msv",
+		"rhsgref_ins_g_btr70",
+		"rhsgref_ins_g_btr60",
+		"rhs_zsu234_aa",
+		"rhsgref_ins_g_zsu234",
+		"RHS_M2A2",
+		"RHS_M2A3_BUSKIII",
+		"RHS_M6"
 	] call BIS_fnc_selectRandom;
 
 	_missionType = switch (true) do
 	{
-		case ({_vehicleClass isKindOf _x} count ["B_APC_Tracked_01_AA_F", "O_APC_Tracked_02_AA_F"] > 0): { "Anti Aircraft Vehicle" };
-		case (_vehicleClass isKindOf "Tank_F"):                                                          { "Infantry Fighting Vehicle" };
-		default                                                                                          { "Armored Personnel Carrier" };
+		case ({_vehicleClass isKindOf _x} count ["rhs_bmp2_tv", "rhs_prp3_tv", "rhs_bmp1k_tv", "RHS_M2A2", "RHS_M2A3_BUSKIII", "RHS_M6"] > 0): { "Infantry Fighting Vehicle" };
+		case ({_vehicleClass isKindOf _x} count ["rhs_zsu234_aa", "rhsgref_ins_g_zsu234"] > 0):                                                { "Anti Aircraft Vehicle" };
+		default                                                                                                                                { "Armored Personnel Carrier" };
 	};
 
 	_locationsArray = MissionSpawnMarkers;
