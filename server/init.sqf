@@ -475,46 +475,6 @@ if ((isNil "A3W_buildingLoot" && {["A3W_buildingLootWeapons"] call isConfigOn ||
 
 [] execVM "server\functions\serverTimeSync.sqf";
 
-if (["A3W_serverSpawning"] call isConfigOn) then
-{
-	diag_log "WASTELAND SERVER - Initializing Server Spawning";
-
-	if (["A3W_heliSpawning"] call isConfigOn) then
-	{
-		call compile preprocessFileLineNumbers "server\functions\staticHeliSpawning.sqf";
-	};
-
-	if (["A3W_vehicleSpawning"] call isConfigOn) then
-	{
-		call compile preprocessFileLineNumbers "server\functions\vehicleSpawning.sqf";
-	};
-
-	if (["A3W_planeSpawning"] call isConfigOn) then
-	{
-		call compile preprocessFileLineNumbers "server\functions\planeSpawning.sqf";
-	};
-
-	if (["A3W_boatSpawning"] call isConfigOn) then
-	{
-		call compile preprocessFileLineNumbers "server\functions\boatSpawning.sqf";
-	};
-
-	if (["A3W_baseBuilding"] call isConfigOn || ["A3W_essentialsSpawning"] call isConfigOn) then
-	{
-		call compile preprocessFileLineNumbers "server\functions\objectsSpawning.sqf";
-	};
-
-	if (["A3W_boxSpawning"] call isConfigOn) then
-	{
-		call compile preprocessFileLineNumbers "server\functions\boxSpawning.sqf";
-	};
-
-	if (["A3W_vehicleSpawning"] call isConfigOn || ["A3W_boatSpawning"] call isConfigOn) then
-	{
-		execVM "server\spawning\vehicleRespawnManager.sqf";
-	};
-};
-
 A3W_serverSpawningComplete = compileFinal "true";
 publicVariable "A3W_serverSpawningComplete";
 
@@ -540,12 +500,9 @@ else
 	} forEach entities "CAManBase";
 };
 
-//Execute Server Missions.
-if (["A3W_serverMissions"] call isConfigOn) then
-{
-	diag_log "WASTELAND SERVER - Initializing Missions";
-	[] execVM "server\missions\masterController.sqf";
-};
+// Start Patrols Manager
+call compile preprocessFileLineNumbers "server\pve\patrols\patrolsFunctions.sqf";
+[] execVM "server\pve\patrols\patrolsManager.sqf";
 
 if !(["A3W_hcObjCleanup"] call isConfigOn) then
 {

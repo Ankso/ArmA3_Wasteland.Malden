@@ -6,6 +6,10 @@
 //	@file Author: [404] Deadbeat, [GoT] JoSchaap, AgentRev
 //	@file Description: The main init.
 
+// Shared initialization
+_handle = [] execVM "shared\SharedDefines.sqf";
+waitUntil { scriptDone _handle };
+
 #include "debugFlag.hpp"
 
 #ifdef A3W_DEBUG

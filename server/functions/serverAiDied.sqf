@@ -26,4 +26,7 @@ if (isUavConnected _killerVehicle) then
 	};
 };
 
+// Trigger loot system here
+diag_log format ["Loot system should be triggered here for unit %1!", _unit];
+
 [_unit, _killer, _presumedKiller] call A3W_fnc_serverPlayerDied;
