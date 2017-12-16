@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1216;
+		nextID=1222;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=35;
+		nextID=39;
 	};
 	class Camera
 	{
-		pos[]={6770.3213,558.62238,2683.2607};
-		dir[]={-0.54709411,-0.66838032,0.50410253};
-		up[]={-0.49168625,0.74362522,0.45304844};
-		aside[]={0.67766863,-5.757247e-007,0.73546499};
+		pos[]={5713.4541,1065.7435,2208.8552};
+		dir[]={0.24700931,-0.7158739,0.65322006};
+		up[]={0.25326934,0.69801915,0.66977853};
+		aside[]={0.93543667,-1.0395597e-006,-0.35372388};
 	};
 };
 binarizationWanted=0;
@@ -300,7 +300,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=248;
+		items=253;
 		class Item0
 		{
 			dataType="Group";
@@ -538,7 +538,7 @@ class Mission
 					};
 					id=14;
 					type="B_engineer_F";
-					atlOffset=0.095348358;
+					atlOffset=0.095348835;
 				};
 			};
 			class Attributes
@@ -7374,12 +7374,11 @@ class Mission
 		class Item188
 		{
 			dataType="Marker";
-			position[]={6271.998,397.43381,4747.9546};
+			position[]={6259.1719,397.72327,4754.3276};
 			name="insurgent_patrol_mountain_3";
 			type="Empty";
 			colorName="ColorGUER";
 			id=940;
-			atlOffset=0.18667603;
 		};
 		class Item189
 		{
@@ -8112,6 +8111,90 @@ class Mission
 			};
 			id=1215;
 			type="rhs_weapons_crate_ak";
+		};
+		class Item248
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6090.3999,50.999184,2952.4302};
+				angles[]={0.0072011296,0,0.047164604};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1216;
+			type="rhsgref_weapons_crate";
+			atlOffset=-7.6293945e-006;
+		};
+		class Item249
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6083.4839,51.007069,2940.7727};
+				angles[]={0.0080009829,0,0.047165871};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1217;
+			type="rhs_mags_crate";
+			atlOffset=-7.6293945e-006;
+		};
+		class Item250
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6089.8086,51.299129,2939.9194};
+				angles[]={0.011198638,0,0.044770103};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1218;
+			type="rhs_gear_crate";
+			atlOffset=1.1444092e-005;
+		};
+		class Item251
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6084.6162,51.391273,2969.4448};
+				angles[]={0.024795037,0,0.039979152};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1220;
+			type="rhsusf_mags_crate";
+		};
+		class Item252
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6090.5859,51.647511,2969.1438};
+				angles[]={0.024795037,0,0.043172773};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1221;
+			type="rhsusf_gear_crate";
+			atlOffset=-2.6702881e-005;
 		};
 	};
 };

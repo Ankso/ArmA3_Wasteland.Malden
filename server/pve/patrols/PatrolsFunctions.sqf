@@ -15,7 +15,7 @@
 WI_fnc_CreateRandomPatrol = {
 	if (!isServer) exitWith {};
 
-	private ["_group", "_zone", "_difficulty", "_unitsCount", "_possibleWaypoints", "_waypoints", "_unitTypes", "_officerTypes", "_markersName", "_breakLoop", "_markersCount"];
+	private ["_group", "_zone", "_difficulty", "_unitsCount", "_possibleWaypoints", "_waypoints", "_unitTypes", "_officerTypes", "_markersName", "_faction", "_breakLoop", "_markersCount"];
 
 	// All AI is OpFor
 	_group = createGroup [east, true];
@@ -25,6 +25,7 @@ WI_fnc_CreateRandomPatrol = {
 	_possibleWaypoints = [];
 	_waypoints = [];
 	_markersName = "";
+	_faction = "";
 
 	_unitTypes = [
 		// BLUFOR units
@@ -110,18 +111,21 @@ WI_fnc_CreateRandomPatrol = {
 			_unitTypes = (_unitTypes select 0) select (_difficulty - 1);
 			_officerTypes = _officerTypes select 0;
 			_unitsCount = 4;
+			_faction = "BLUFOR";
 		};
 		case INSURGENTS_ZONE_SOUTH_WEST: {
 			_markersName = "insurgent_patrol";
 			_unitTypes = (_unitTypes select 2) select (_difficulty - 1);
 			_officerTypes = _officerTypes select 2;
 			_unitsCount = 4;
+			_faction = "INSURGENCY";
 		};
 		case INSURGENTS_ZONE_SOUTH_EAST: {
 			_markersName = "insurgent_patrol_east";
 			_unitTypes = (_unitTypes select 2) select (_difficulty - 1);
 			_officerTypes = _officerTypes select 2;
 			_unitsCount = 4;
+			_faction = "INSURGENCY";
 		};
 		case INSURGENTS_ZONE_MOUNTAIN: {
 			_markersName = "insurgent_patrol_mountain";
@@ -129,24 +133,28 @@ WI_fnc_CreateRandomPatrol = {
 			_officerTypes = _officerTypes select 2;
 			// Mountain patrols are small
 			_unitsCount = 3;
+			_faction = "INSURGENCY";
 		};
 		case OPFOR_ZONE_SOUTH_EAST: {
 			_markersName = "opfor_patrol_south_island";
 			_unitTypes = (_unitTypes select 1) select (_difficulty - 1);
 			_officerTypes = _officerTypes select 1;
 			_unitsCount = 4;
+			_faction = "OPFOR";
 		};
 		case OPFOR_ZONE_NORTH_EAST: {
 			_markersName = "opfor_patrol";
 			_unitTypes = (_unitTypes select 1) select (_difficulty - 1);
 			_officerTypes = _officerTypes select 1;
 			_unitsCount = 6;
+			_faction = "OPFOR";
 		};
 		case BLUFOR_ZONE_NORTH_WEST: {
 			_markersName = "blufor_patrol";
 			_unitTypes = (_unitTypes select 0) select (_difficulty - 1);
 			_officerTypes = _officerTypes select 0;
 			_unitsCount = 6;
+			_faction = "BLUFOR";
 		};
 		default {};
 	};
@@ -203,6 +211,7 @@ WI_fnc_CreateRandomPatrol = {
 		_unit setSkill ["aimingAccuracy", (_unit skill "aimingAccuracy") * _accuracy];
 		_unit setSkill ["courage", 1];
 		_unit addEventHandler ["Killed", server_playerDied];
+		_unit setVariable ["ficticiousFaction", _faction, true];
 	};
 
 	// Add group waypoints
@@ -235,7 +244,7 @@ WI_fnc_CreateRandomPatrol = {
 WI_fnc_CreateRandomMotorizedPatrol = {
 	if (!isServer) exitWith {};
 
-	private ["_group", "_zone", "_difficulty", "_unitsCount", "_possibleWaypoints", "_waypoints", "_unitTypes", "_officerTypes", "_vehicleTypes", "_vehicle1", "_vehicle2", "_markersName", "_breakLoop", "_markersCount"];
+	private ["_group", "_zone", "_difficulty", "_unitsCount", "_possibleWaypoints", "_waypoints", "_unitTypes", "_officerTypes", "_vehicleTypes", "_vehicle1", "_vehicle2", "_markersName", "_faction", "_breakLoop", "_markersCount"];
 
 	// All AI is OpFor
 	_group = createGroup [east, true];
@@ -245,6 +254,7 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 	_possibleWaypoints = [];
 	_waypoints = [];
 	_markersName = "";
+	_faction = "";
 
 	_unitTypes = [
 		// BLUFOR units
@@ -361,6 +371,7 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 			_officerTypes = _officerTypes select 0;
 			_vehicleTypes = (_vehicleTypes select 0) select (_difficulty - 1);
 			_unitsCount = 4;
+			_faction = "BLUFOR";
 		};
 		case INSURGENTS_ZONE_SOUTH_WEST: {
 			_markersName = "insurgent_patrol";
@@ -368,6 +379,7 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 			_officerTypes = _officerTypes select 2;
 			_vehicleTypes = (_vehicleTypes select 2) select (_difficulty - 1);
 			_unitsCount = 4;
+			_faction = "INSURGENCY";
 		};
 		case INSURGENTS_ZONE_SOUTH_EAST: {
 			_markersName = "insurgent_patrol_east";
@@ -375,6 +387,7 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 			_officerTypes = _officerTypes select 2;
 			_vehicleTypes = (_vehicleTypes select 2) select (_difficulty - 1);
 			_unitsCount = 4;
+			_faction = "INSURGENCY";
 		};
 		case INSURGENTS_ZONE_MOUNTAIN: {
 			_markersName = "insurgent_patrol_mountain";
@@ -383,6 +396,7 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 			_vehicleTypes = (_vehicleTypes select 2) select (_difficulty - 1);
 			// Mountain patrols are small
 			_unitsCount = 3;
+			_faction = "INSURGENCY";
 		};
 		case OPFOR_ZONE_SOUTH_EAST: {
 			_markersName = "opfor_patrol_south_island";
@@ -390,6 +404,7 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 			_officerTypes = _officerTypes select 1;
 			_vehicleTypes = (_vehicleTypes select 1) select (_difficulty - 1);
 			_unitsCount = 4;
+			_faction = "OPFOR";
 		};
 		case OPFOR_ZONE_NORTH_EAST: {
 			_markersName = "opfor_patrol";
@@ -397,6 +412,7 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 			_officerTypes = _officerTypes select 1;
 			_vehicleTypes = (_vehicleTypes select 1) select (_difficulty - 1);
 			_unitsCount = 6;
+			_faction = "OPFOR";
 		};
 		case BLUFOR_ZONE_NORTH_WEST: {
 			_markersName = "blufor_patrol";
@@ -404,6 +420,7 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 			_officerTypes = _officerTypes select 0;
 			_vehicleTypes = (_vehicleTypes select 0) select (_difficulty - 1);
 			_unitsCount = 6;
+			_faction = "BLUFOR";
 		};
 		default {};
 	};
@@ -474,6 +491,7 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 		_unit setSkill ["aimingAccuracy", (_unit skill "aimingAccuracy") * _accuracy];
 		_unit setSkill ["courage", 1];
 		_unit addEventHandler ["Killed", server_playerDied];
+		_unit setVariable ["ficticiousFaction", _faction, true];
 	};
 
 	// Add group waypoints

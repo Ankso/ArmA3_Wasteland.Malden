@@ -503,6 +503,9 @@ else
 // Start Patrols Manager
 call compile preprocessFileLineNumbers "server\pve\patrols\patrolsFunctions.sqf";
 [] execVM "server\pve\patrols\patrolsManager.sqf";
+// Compile loot system
+call compile preprocessFileLineNumbers "server\loot\LootTables.sqf";
+call compile preprocessFileLineNumbers "server\loot\LootFunctions.sqf";
 
 if !(["A3W_hcObjCleanup"] call isConfigOn) then
 {

@@ -27,6 +27,8 @@ if (isUavConnected _killerVehicle) then
 };
 
 // Trigger loot system here
-diag_log format ["Loot system should be triggered here for unit %1!", _unit];
+if (!isPlayer _unit) then {
+	_unit call WI_fnc_ProcessLootForUnit; // Will be better to use spawn here?
+};
 
 [_unit, _killer, _presumedKiller] call A3W_fnc_serverPlayerDied;

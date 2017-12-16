@@ -29,8 +29,7 @@ diag_log "SERVER - Patrols manager: Initializing...";
 
 _count = 0;
 _i = 0;
-while {_i < MAX_PATROL_ZONES} do
-{
+while {_i < MAX_PATROL_ZONES} do {
     _numPatrols = _numberOfPatrols select _i;
     _j = 0;
     while {_j < _numPatrols} do {
