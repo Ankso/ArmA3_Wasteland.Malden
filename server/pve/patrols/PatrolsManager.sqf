@@ -61,7 +61,8 @@ while {true} do {
         if ({alive _x} count units _group <= 0) then {
             diag_log format ["SERVER - Patrols manager: A group in ZoneID %1 has been killed, respawning...", _zone];
             // Remove group from the array:
-            _groups = _groups - [_group];
+            _groups set [_i, -1];
+            _groups = _groups - [-1];
             // Create new patrol
             if (random 1 < 0.25 && _i > OPFOR_ZONE_SOUTH_EAST) then {
                 _group = [_zone, _difficulty] call WI_fnc_CreateRandomMotorizedPatrol;
@@ -75,5 +76,5 @@ while {true} do {
         _i = _i + 1;
     };
     // One minute between checks is more than enought
-    sleep 60;
+    uiSleep 60;
 };

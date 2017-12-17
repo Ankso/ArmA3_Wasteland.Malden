@@ -8,16 +8,16 @@
  */
 
 WI_fnc_ProcessLootForUnit = {
-	private ["_unit", "_rank", "_faction", "_lootTable", "_lootTableIndex", "_currentLoot"];
+	private ["_unit", "_rank", "_faction", "_lootTable", "_lootTableIndex", "_currentLoot", "_hasDrop"];
 
-	_unit = this select 0;
+	_unit = _this select 0;
 	_rank = rank _unit;
-	_faction = _unit getVariable ["ficticiousFaction", false];
+	_faction = _unit getVariable ["ficticiousFaction", "noFaction"];
 	_lootTable = [];
 	_lootTableIndex = 0;
 	_currentLoot = [];
 
-	if (_faction) then {
+	if (_faction != "noFaction") then {
 		// Remove everything but clothes/vest/backpack
 		removeAllWeapons _unit;
 		removeAllAssignedItems _unit;
@@ -43,24 +43,27 @@ WI_fnc_ProcessLootForUnit = {
 		_unit addWeapon (selectRandomWeighted _currentLoot);
 		// Secondary weapons. Roll our chances.
 		_currentLoot = (_lootTable select _lootTableIndex) select 1;
-		if (_currentLoot call WI_fnc_RollDropChances) then {
+		_hasDrop = _currentLoot call WI_fnc_RollDropChances;
+		if (_hasDrop) then {
 			_unit addWeapon (selectRandomWeighted _currentLoot);
 		};
-		// Ammo loot. A unit can drop 1-4 mags, 1-3 of each one.
+		// Ammo loot. A unit can drop 1-3 mag types, 1-2 of each one.
 		_currentLoot = (_lootTable select _lootTableIndex) select 2;
-		_magsDrop = ceil (random 4);
+		_magsDrop = ceil (random 3);
 		for "_i" from 0 to _magsDrop do {
-			_unit addMagazine [selectRandomWeighted _currentLoot, ceil (random 3)];
+			_unit addMagazines [selectRandomWeighted _currentLoot, ceil (random 2)];
 		};
 		// Launcher drop. We must roll.
 		_currentLoot = (_lootTable select _lootTableIndex) select 3;
-		if (_currentLoot call WI_fnc_RollDropChances) then {
+		_hasDrop = _currentLoot call WI_fnc_RollDropChances;
+		if (_hasDrop) then {
 			_unit addWeapon (selectRandomWeighted _currentLoot);
 		};
 		// Launcher ammo drop, also roll first.
 		_currentLoot = (_lootTable select _lootTableIndex) select 4;
-		if (_currentLoot call WI_fnc_RollDropChances) then {
-			_unit addMagazine [(selectRandomWeighted _currentLoot), ceil (random 2)]; // 1-2 rockets
+		_hasDrop = _currentLoot call WI_fnc_RollDropChances;
+		if (_hasDrop) then {
+			_unit addMagazines [(selectRandomWeighted _currentLoot), ceil (random 2)]; // 1-2 rockets
 		};
 		// Weapon accessories. 100% chance to drop 1-2.
 		_currentLoot = (_lootTable select _lootTableIndex) select 5;
@@ -70,7 +73,8 @@ WI_fnc_ProcessLootForUnit = {
 		};
 		// Explosives loot. Roll here. If we must drop something, drop 1-2.
 		_currentLoot = (_lootTable select _lootTableIndex) select 6;
-		if (_currentLoot call WI_fnc_RollDropChances) then {
+		_hasDrop = _currentLoot call WI_fnc_RollDropChances;
+		if (_hasDrop) then {
 			_unit addItem (selectRandomWeighted _currentLoot);
 			if (random 1 >= 0.50) then {
 				_unit addItem (selectRandomWeighted _currentLoot);
@@ -78,7 +82,8 @@ WI_fnc_ProcessLootForUnit = {
 		};
 		// Finally, items (NVG, binoculars...). Last bit of RNG :)
 		_currentLoot = (_lootTable select _lootTableIndex) select 7;
-		if (_currentLoot call WI_fnc_RollDropChances) then {
+		_hasDrop = _currentLoot call WI_fnc_RollDropChances;
+		if (_hasDrop) then {
 			_unit addItem (selectRandomWeighted _currentLoot);
 		};
 		// Loot drop has been completed.
@@ -94,7 +99,7 @@ WI_fnc_ProcessLootForPlayer = {
 WI_fnc_RollDropChances = {
 	private ["_lootArray", "_chancesArray", "_i", "_hasDrop"];
 
-	_lootArray = this select 0;
+	_lootArray = _this;
 	_chancesArray = [];
 	_hasDrop = false;
 	// Get items "drop chance"
@@ -103,13 +108,16 @@ WI_fnc_RollDropChances = {
 		_chancesArray pushBack (_lootArray select _i);
 		_i = _i + 2;
 	};
+	diag_log format ["DEBUG: Loot array: %1, Drop chances: %2", _lootArray, _chancesArray];
 	// Roll the dice
 	_i = 0;
-	while {_i < (count _chancesArray) && !hasDrop} do {
+	while {_i < (count _chancesArray)} do {
 		if (random 1 <= (_chancesArray select _i)) then {
 			_hasDrop = true;
+			_i = count _chancesArray;
 		};
+		_i = _i + 1;
 	};
-
+	diag_log format ["DEBUG: _hasDrop: %1", _hasDrop];
 	_hasDrop;
 }

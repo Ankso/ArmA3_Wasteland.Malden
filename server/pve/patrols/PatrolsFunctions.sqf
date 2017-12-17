@@ -27,132 +27,55 @@ WI_fnc_CreateRandomPatrol = {
 	_markersName = "";
 	_faction = "";
 
-	_unitTypes = [
-		// BLUFOR units
-		[
-			// Difficulty level 1
-			[
-				"rhsusf_usmc_marpat_d_rifleman", "rhsusf_usmc_marpat_d_rifleman_law", "rhsusf_usmc_marpat_d_rifleman_m4",
-				"rhsusf_usmc_marpat_d_rifleman_light", "rhsusf_usmc_marpat_d_stinger", "rhsusf_usmc_marpat_d_grenadier"
-			],
-			// Difficulty level 2
-			[
-				"rhsusf_usmc_marpat_d_rifleman", "rhsusf_usmc_marpat_d_rifleman_law", "rhsusf_usmc_marpat_d_riflemanat", "rhsusf_usmc_marpat_d_rifleman_m4",
-				"rhsusf_usmc_marpat_d_rifleman_light", "rhsusf_usmc_marpat_d_smaw", "rhsusf_usmc_marpat_d_stinger", "rhsusf_usmc_marpat_d_machinegunner",
-				"rhsusf_usmc_marpat_d_grenadier", "rhsusf_usmc_marpat_d_marksman", "rhsusf_usmc_marpat_d_engineer"
-			],
-			// Difficulty level 3
-			[
-				"rhsusf_army_ocp_aa", "rhsusf_army_ocp_rifleman_1stcav", "rhsusf_army_ocp_rifleman_10th", "rhsusf_army_ocp_marksman",
-				"rhsusf_army_ocp_machinegunner", "rhsusf_army_ocp_grenadier", "rhsusf_army_ocp_fso", "rhsusf_army_ocp_medic",
-				"rhsusf_army_ocp_maaws", "rhsusf_army_ocp_riflemanat", "rhsusf_army_ocp_rifleman_m590", "rhsusf_army_ocp_autorifleman",
-				"rhsusf_army_ocp_engineer", "rhsusf_army_ocp_explosives", "rhsusf_army_ocp_sniper"
-			]
-		],
-		// OPFOR units
-		[
-			// Difficulty level 1
-			[
-				"rhs_msv_emr_rifleman", "rhs_msv_emr_grenadier", "rhs_msv_emr_LAT", "rhs_msv_emr_RShG2",
-				"rhs_msv_emr_aa", "rhs_msv_emr_at", "rhs_msv_emr_arifleman", "rhs_msv_emr_efreitor",
-				"rhs_msv_emr_grenadier", "rhs_msv_emr_machinegunner"
-			],
-			// Difficulty level 2
-			[
-				"rhs_msv_emr_rifleman", "rhs_msv_emr_grenadier", "rhs_msv_emr_LAT", "rhs_msv_emr_RShG2",
-				"rhs_msv_emr_aa", "rhs_msv_emr_at", "rhs_msv_emr_arifleman", "rhs_msv_emr_efreitor",
-				"rhs_msv_emr_grenadier", "rhs_msv_emr_engineer_rpg", "rhs_msv_emr_machinegunner", "rhs_msv_emr_marksman",
-				"rhs_msv_emr_medic"
-			],
-			// Difficulty level 3
-			[
-				"rhs_vdv_des_aa", "rhs_vdv_des_at", "rhs_vdv_des_arifleman", "rhs_vdv_des_efreitor",
-				"rhs_vdv_des_engineer", "rhs_vdv_des_grenadier_rpg", "rhs_vdv_des_junior_sergeant", "rhs_vdv_des_machinegunner",
-				"rhs_vdv_des_marksman", "rhs_vdv_des_marksman_asval", "rhs_vdv_des_medic", "rhs_vdv_des_grenadier",
-				"rhs_vdv_des_LAT", "rhs_vdv_des_RShG2"
-			]
-		],
-		// Insurgency units
-		[
-			// Difficulty level 1
-			[
-				"rhsgref_ins_g_specialist_aa", "rhsgref_ins_g_grenadier_rpg", "rhsgref_ins_g_machinegunner", "rhsgref_ins_g_militiaman_mosin",
-				"rhsgref_ins_g_medic", "rhsgref_ins_g_rifleman_akm", "rhsgref_ins_g_rifleman_aks74", "rhsgref_ins_g_rifleman_aksu",
-				"rhsgref_ins_g_grenadier", "rhsgref_ins_g_rifleman_RPG26", "rhsgref_ins_g_engineer"
-			],
-			// Difficulty level 2
-			[
-				"rhsgref_ins_g_specialist_aa", "rhsgref_ins_g_grenadier_rpg", "rhsgref_ins_g_machinegunner", "rhsgref_ins_g_militiaman_mosin",
-				"rhsgref_ins_g_rifleman", "rhsgref_ins_g_saboteur", "rhsgref_ins_g_sniper", "rhsgref_ins_g_spotter"
-			],
-			// Difficulty level 3
-			[
-				"rhsgref_ins_g_specialist_aa", "rhsgref_ins_g_grenadier_rpg", "rhsgref_ins_g_machinegunner", "rhsgref_ins_g_militiaman_mosin",
-				"rhsgref_ins_g_medic", "rhsgref_ins_g_rifleman_akm", "rhsgref_ins_g_rifleman_aks74", "rhsgref_ins_g_rifleman_aksu",
-				"rhsgref_ins_g_grenadier", "rhsgref_ins_g_rifleman_RPG26", "rhsgref_ins_g_engineer",
-				"rhsgref_ins_g_rifleman", "rhsgref_ins_g_saboteur", "rhsgref_ins_g_sniper", "rhsgref_ins_g_spotter"
-			]
-		]
-	];
-
-	_officerTypes = [
-		// BLUFOR officers
-		["rhsusf_army_ocp_teamleader", "rhsusf_army_ocp_officer", "rhsusf_army_ocp_squadleader"],
-		// OPFOR officers
-		["rhs_vdv_des_sergeant", "rhs_msv_emr_officer_armored"],
-		// Insurgency officers
-		["rhsgref_ins_g_squadleader"]
-	];
-
 	// Each zone has its possible waypoints
 	switch (_zone) do {
 		case BLUFOR_ZONE_SOUTH_WEST: {
 			_markersName = "blufor_patrol_south";
-			_unitTypes = (_unitTypes select 0) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 0;
+			_unitTypes = BluforUnitTypes select (_difficulty - 1);
+			_officerTypes = BluforOfficerTypes;
 			_unitsCount = 4;
 			_faction = "BLUFOR";
 		};
 		case INSURGENTS_ZONE_SOUTH_WEST: {
 			_markersName = "insurgent_patrol";
-			_unitTypes = (_unitTypes select 2) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 2;
+			_unitTypes = InsurgencyUnitTypes select (_difficulty - 1);
+			_officerTypes = InsurgencyOfficerTypes;
 			_unitsCount = 4;
 			_faction = "INSURGENCY";
 		};
 		case INSURGENTS_ZONE_SOUTH_EAST: {
 			_markersName = "insurgent_patrol_east";
-			_unitTypes = (_unitTypes select 2) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 2;
+			_unitTypes = InsurgencyUnitTypes select (_difficulty - 1);
+			_officerTypes = InsurgencyOfficerTypes;
 			_unitsCount = 4;
 			_faction = "INSURGENCY";
 		};
 		case INSURGENTS_ZONE_MOUNTAIN: {
 			_markersName = "insurgent_patrol_mountain";
-			_unitTypes = (_unitTypes select 2) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 2;
+			_unitTypes = InsurgencyUnitTypes select (_difficulty - 1);
+			_officerTypes = InsurgencyOfficerTypes;
 			// Mountain patrols are small
 			_unitsCount = 3;
 			_faction = "INSURGENCY";
 		};
 		case OPFOR_ZONE_SOUTH_EAST: {
 			_markersName = "opfor_patrol_south_island";
-			_unitTypes = (_unitTypes select 1) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 1;
+			_unitTypes = OpforUnitTypes select (_difficulty - 1);
+			_officerTypes = OpforOfficerTypes;
 			_unitsCount = 4;
 			_faction = "OPFOR";
 		};
 		case OPFOR_ZONE_NORTH_EAST: {
 			_markersName = "opfor_patrol";
-			_unitTypes = (_unitTypes select 1) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 1;
+			_unitTypes = OpforUnitTypes select (_difficulty - 1);
+			_officerTypes = OpforOfficerTypes;
 			_unitsCount = 6;
 			_faction = "OPFOR";
 		};
 		case BLUFOR_ZONE_NORTH_WEST: {
 			_markersName = "blufor_patrol";
-			_unitTypes = (_unitTypes select 0) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 0;
+			_unitTypes = BluforUnitTypes select (_difficulty - 1);
+			_officerTypes = BluforOfficerTypes;
 			_unitsCount = 6;
 			_faction = "BLUFOR";
 		};
@@ -183,7 +106,7 @@ WI_fnc_CreateRandomPatrol = {
 	for "_i" from 1 to _unitsCount do
 	{
 		// First waypoint is also the spawn point
-		_uPos = (_waypoints select 0) vectorAdd ([[random 10, 0, 0], random 360] call BIS_fnc_rotateVector2D);
+		_uPos = (_waypoints select 0);
 		_unit = nil;
 		// Spawn first the group leader/officer
 		if (_i == 1) then {
@@ -200,10 +123,10 @@ WI_fnc_CreateRandomPatrol = {
 		_skill = 0.33;
 		_accuracy = 0.75;
 		switch (_difficulty) do {
-			case 0: { _skill = 0.33; _accuracy = 0.75; };
-			case 1: { _skill = 0.41; _accuracy = 0.87; };
-			case 2: { _skill = 0.50; _accuracy = 1;    };
-			case 3: { _skill = 0.65; _accuracy = 1.15; };
+			case 1: { _skill = 0.33; _accuracy = 0.75; };
+			case 2: { _skill = 0.41; _accuracy = 0.87; };
+			case 3: { _skill = 0.50; _accuracy = 1;    };
+			case 4: { _skill = 0.65; _accuracy = 1.15; };
 		};
 
 		_unit allowFleeing 0;
@@ -256,169 +179,62 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 	_markersName = "";
 	_faction = "";
 
-	_unitTypes = [
-		// BLUFOR units
-		[
-			// Difficulty level 1
-			[
-				"rhsusf_usmc_marpat_d_rifleman", "rhsusf_usmc_marpat_d_rifleman_law", "rhsusf_usmc_marpat_d_rifleman_m4",
-				"rhsusf_usmc_marpat_d_rifleman_light", "rhsusf_usmc_marpat_d_stinger", "rhsusf_usmc_marpat_d_grenadier"
-			],
-			// Difficulty level 2
-			[
-				"rhsusf_usmc_marpat_d_rifleman", "rhsusf_usmc_marpat_d_rifleman_law", "rhsusf_usmc_marpat_d_riflemanat", "rhsusf_usmc_marpat_d_rifleman_m4",
-				"rhsusf_usmc_marpat_d_rifleman_light", "rhsusf_usmc_marpat_d_smaw", "rhsusf_usmc_marpat_d_stinger", "rhsusf_usmc_marpat_d_machinegunner",
-				"rhsusf_usmc_marpat_d_grenadier", "rhsusf_usmc_marpat_d_marksman", "rhsusf_usmc_marpat_d_engineer"
-			],
-			// Difficulty level 3
-			[
-				"rhsusf_army_ocp_aa", "rhsusf_army_ocp_rifleman_1stcav", "rhsusf_army_ocp_rifleman_10th", "rhsusf_army_ocp_marksman",
-				"rhsusf_army_ocp_machinegunner", "rhsusf_army_ocp_grenadier", "rhsusf_army_ocp_fso", "rhsusf_army_ocp_medic",
-				"rhsusf_army_ocp_maaws", "rhsusf_army_ocp_riflemanat", "rhsusf_army_ocp_rifleman_m590", "rhsusf_army_ocp_autorifleman",
-				"rhsusf_army_ocp_engineer", "rhsusf_army_ocp_explosives", "rhsusf_army_ocp_sniper"
-			]
-		],
-		// OPFOR units
-		[
-			// Difficulty level 1
-			[
-				"rhs_msv_emr_rifleman", "rhs_msv_emr_grenadier", "rhs_msv_emr_LAT", "rhs_msv_emr_RShG2",
-				"rhs_msv_emr_aa", "rhs_msv_emr_at", "rhs_msv_emr_arifleman", "rhs_msv_emr_efreitor",
-				"rhs_msv_emr_grenadier", "rhs_msv_emr_machinegunner"
-			],
-			// Difficulty level 2
-			[
-				"rhs_msv_emr_rifleman", "rhs_msv_emr_grenadier", "rhs_msv_emr_LAT", "rhs_msv_emr_RShG2",
-				"rhs_msv_emr_aa", "rhs_msv_emr_at", "rhs_msv_emr_arifleman", "rhs_msv_emr_efreitor",
-				"rhs_msv_emr_grenadier", "rhs_msv_emr_engineer_rpg", "rhs_msv_emr_machinegunner", "rhs_msv_emr_marksman",
-				"rhs_msv_emr_medic"
-			],
-			// Difficulty level 3
-			[
-				"rhs_vdv_des_aa", "rhs_vdv_des_at", "rhs_vdv_des_arifleman", "rhs_vdv_des_efreitor",
-				"rhs_vdv_des_engineer", "rhs_vdv_des_grenadier_rpg", "rhs_vdv_des_junior_sergeant", "rhs_vdv_des_machinegunner",
-				"rhs_vdv_des_marksman", "rhs_vdv_des_marksman_asval", "rhs_vdv_des_medic", "rhs_vdv_des_grenadier",
-				"rhs_vdv_des_LAT", "rhs_vdv_des_RShG2"
-			]
-		],
-		// Insurgency units
-		[
-			// Difficulty level 1
-			[
-				"rhsgref_ins_g_specialist_aa", "rhsgref_ins_g_grenadier_rpg", "rhsgref_ins_g_machinegunner", "rhsgref_ins_g_militiaman_mosin",
-				"rhsgref_ins_g_medic", "rhsgref_ins_g_rifleman_akm", "rhsgref_ins_g_rifleman_aks74", "rhsgref_ins_g_rifleman_aksu",
-				"rhsgref_ins_g_grenadier", "rhsgref_ins_g_rifleman_RPG26", "rhsgref_ins_g_engineer"
-			],
-			// Difficulty level 2
-			[
-				"rhsgref_ins_g_specialist_aa", "rhsgref_ins_g_grenadier_rpg", "rhsgref_ins_g_machinegunner", "rhsgref_ins_g_militiaman_mosin",
-				"rhsgref_ins_g_rifleman", "rhsgref_ins_g_saboteur", "rhsgref_ins_g_sniper", "rhsgref_ins_g_spotter"
-			],
-			// Difficulty level 3
-			[
-				"rhsgref_ins_g_specialist_aa", "rhsgref_ins_g_grenadier_rpg", "rhsgref_ins_g_machinegunner", "rhsgref_ins_g_militiaman_mosin",
-				"rhsgref_ins_g_medic", "rhsgref_ins_g_rifleman_akm", "rhsgref_ins_g_rifleman_aks74", "rhsgref_ins_g_rifleman_aksu",
-				"rhsgref_ins_g_grenadier", "rhsgref_ins_g_rifleman_RPG26", "rhsgref_ins_g_engineer",
-				"rhsgref_ins_g_rifleman", "rhsgref_ins_g_saboteur", "rhsgref_ins_g_sniper", "rhsgref_ins_g_spotter"
-			]
-		]
-	];
-
-	_officerTypes = [
-		// BLUFOR officers
-		["rhsusf_army_ocp_teamleader", "rhsusf_army_ocp_officer", "rhsusf_army_ocp_squadleader"],
-		// OPFOR officers
-		["rhs_vdv_des_sergeant", "rhs_msv_emr_officer_armored"],
-		// Insurgency officers
-		["rhsgref_ins_g_squadleader"]
-	];
-
-	_vehicleTypes = [
-		// BLUFOR possible vehicles for the convoy
-		[
-			// Difficulty level 1
-			["rhsusf_m998_d_2dr_fulltop", "rhsusf_m1025_d"],
-			// Difficulty level 2
-			["rhsusf_m1025_d", "rhsusf_m1025_d_m2"],
-			// Difficulty level 3
-			["rhsusf_M1232_usarmy_wd", "rhsusf_M1220_M2_usarmy_wd"]
-		],
-		// OPFOR
-		[
-			// Difficulty level 1
-			["rhs_tigr_msv", "rhs_tigr_m_msv"],
-			// Difficulty level 2
-			["rhs_tigr_m_msv", "rhs_tigr_sts_msv"],
-			// Difficulty level 3
-			["rhs_tigr_sts_msv", "rhs_tigr_m_msv"]
-		],
-		// Insurgency
-		[
-			// Difficulty level 1
-			["rhsgref_ins_g_uaz", "rhsgref_ins_g_uaz_dshkm_chdkz"],
-			// Difficulty level 2
-			["rhsgref_ins_g_uaz", "rhsgref_ins_g_uaz_dshkm_chdkz"],
-			// Difficulty level 3
-			["rhsgref_ins_g_uaz", "rhsgref_ins_g_uaz_dshkm_chdkz"]
-		]
-	];
-
 	// Each zone has its possible waypoints
 	switch (_zone) do {
 		case BLUFOR_ZONE_SOUTH_WEST: {
 			_markersName = "blufor_patrol_south";
-			_unitTypes = (_unitTypes select 0) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 0;
-			_vehicleTypes = (_vehicleTypes select 0) select (_difficulty - 1);
+			_unitTypes = BluforUnitTypes select (_difficulty - 1);
+			_officerTypes = BluforOfficerTypes;
+			_vehicleTypes = BluforVehicleTypes select (_difficulty - 1);
 			_unitsCount = 4;
 			_faction = "BLUFOR";
 		};
 		case INSURGENTS_ZONE_SOUTH_WEST: {
 			_markersName = "insurgent_patrol";
-			_unitTypes = (_unitTypes select 2) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 2;
-			_vehicleTypes = (_vehicleTypes select 2) select (_difficulty - 1);
+			_unitTypes = InsurgencyUnitTypes select (_difficulty - 1);
+			_officerTypes = InsurgencyOfficerTypes;
+			_vehicleTypes = InsurgencyVehicleTypes select (_difficulty - 1);
 			_unitsCount = 4;
 			_faction = "INSURGENCY";
 		};
 		case INSURGENTS_ZONE_SOUTH_EAST: {
 			_markersName = "insurgent_patrol_east";
-			_unitTypes = (_unitTypes select 2) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 2;
-			_vehicleTypes = (_vehicleTypes select 2) select (_difficulty - 1);
+			_unitTypes = InsurgencyUnitTypes select (_difficulty - 1);
+			_officerTypes = InsurgencyOfficerTypes;
+			_vehicleTypes = InsurgencyVehicleTypes select (_difficulty - 1);
 			_unitsCount = 4;
 			_faction = "INSURGENCY";
 		};
 		case INSURGENTS_ZONE_MOUNTAIN: {
 			_markersName = "insurgent_patrol_mountain";
-			_unitTypes = (_unitTypes select 2) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 2;
-			_vehicleTypes = (_vehicleTypes select 2) select (_difficulty - 1);
+			_unitTypes = InsurgencyUnitTypes select (_difficulty - 1);
+			_officerTypes = InsurgencyOfficerTypes;
+			_vehicleTypes = InsurgencyVehicleTypes select (_difficulty - 1);
 			// Mountain patrols are small
 			_unitsCount = 3;
 			_faction = "INSURGENCY";
 		};
 		case OPFOR_ZONE_SOUTH_EAST: {
 			_markersName = "opfor_patrol_south_island";
-			_unitTypes = (_unitTypes select 1) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 1;
-			_vehicleTypes = (_vehicleTypes select 1) select (_difficulty - 1);
+			_unitTypes = OpforUnitTypes select (_difficulty - 1);
+			_officerTypes = OpforOfficerTypes;
+			_vehicleTypes = OpforVehicleTypes select (_difficulty - 1);
 			_unitsCount = 4;
 			_faction = "OPFOR";
 		};
 		case OPFOR_ZONE_NORTH_EAST: {
 			_markersName = "opfor_patrol";
-			_unitTypes = (_unitTypes select 1) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 1;
-			_vehicleTypes = (_vehicleTypes select 1) select (_difficulty - 1);
+			_unitTypes = OpforUnitTypes select (_difficulty - 1);
+			_officerTypes = OpforOfficerTypes;
+			_vehicleTypes = OpforVehicleTypes select (_difficulty - 1);
 			_unitsCount = 6;
 			_faction = "OPFOR";
 		};
 		case BLUFOR_ZONE_NORTH_WEST: {
 			_markersName = "blufor_patrol";
-			_unitTypes = (_unitTypes select 0) select (_difficulty - 1);
-			_officerTypes = _officerTypes select 0;
-			_vehicleTypes = (_vehicleTypes select 0) select (_difficulty - 1);
+			_unitTypes = BluforUnitTypes select (_difficulty - 1);
+			_officerTypes = BluforOfficerTypes;
+			_vehicleTypes = BluforVehicleTypes select (_difficulty - 1);
 			_unitsCount = 6;
 			_faction = "BLUFOR";
 		};
@@ -450,12 +266,16 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 	_vehicle1 = (_vehicleTypes select 0) createVehicle (_waypoints select 1);
 	_vehicle1 allowDamage false;
 	_group addVehicle _vehicle1;
+	clearMagazineCargoGlobal _vehicle1;
+	clearWeaponCargoGlobal _vehicle1;
 	_vehicle1 setVariable ["R3F_LOG_disabled", true, true];
 	_vehicle1 setVariable ["A3W_skipAutoSave", true, true];
 	[_vehicle1] spawn {sleep 10; (_this select 0) allowDamage true;};
 	_vehicle2 = (_vehicleTypes select 1) createVehicle (_waypoints select 1);
 	_vehicle2 allowDamage false;
 	_group addVehicle _vehicle2;
+	clearMagazineCargoGlobal _vehicle2;
+	clearWeaponCargoGlobal _vehicle2;
 	_vehicle2 setVariable ["R3F_LOG_disabled", true, true];
 	_vehicle2 setVariable ["A3W_skipAutoSave", true, true];
 	[_vehicle2] spawn {sleep 10; (_this select 0) allowDamage true;};
@@ -480,10 +300,10 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 		_skill = 0.33;
 		_accuracy = 0.75;
 		switch (_difficulty) do {
-			case 0: { _skill = 0.33; _accuracy = 0.75; };
-			case 1: { _skill = 0.41; _accuracy = 0.87; };
-			case 2: { _skill = 0.50; _accuracy = 1;    };
-			case 3: { _skill = 0.65; _accuracy = 1.15; };
+			case 1: { _skill = 0.33; _accuracy = 0.75; };
+			case 2: { _skill = 0.41; _accuracy = 0.87; };
+			case 3: { _skill = 0.50; _accuracy = 1;    };
+			case 4: { _skill = 0.65; _accuracy = 1.15; };
 		};
 
 		_unit allowFleeing 0;

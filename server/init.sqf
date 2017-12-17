@@ -500,9 +500,14 @@ else
 	} forEach entities "CAManBase";
 };
 
+call compile preprocessFileLineNumbers "server\pve\UnitsTables.sqf";
 // Start Patrols Manager
-call compile preprocessFileLineNumbers "server\pve\patrols\patrolsFunctions.sqf";
-[] execVM "server\pve\patrols\patrolsManager.sqf";
+call compile preprocessFileLineNumbers "server\pve\patrols\PatrolsFunctions.sqf";
+[] execVM "server\pve\patrols\PatrolsManager.sqf";
+// Start Dungeons System
+call compile preprocessFileLineNumbers "server\pve\dungeons\DungeonInfo.sqf";
+call compile preprocessFileLineNumbers "server\pve\dungeons\DungeonFunctions.sqf";
+[] execVM "server\pve\dungeons\DungeonsManager.sqf";
 // Compile loot system
 call compile preprocessFileLineNumbers "server\loot\LootTables.sqf";
 call compile preprocessFileLineNumbers "server\loot\LootFunctions.sqf";

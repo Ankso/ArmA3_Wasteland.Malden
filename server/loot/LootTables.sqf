@@ -306,12 +306,12 @@ InsurgencyLootTable = [
             // Launchers
             "rhs_weap_rpg26", 0.16,
             "rhs_weap_rpg7", 0.06,
-            "rhs_weap_igla", 0.04]
+            "rhs_weap_igla", 0.04
         ], [
             // Launcher ammo
             "rhs_rpg7_PG7VL_mag", 0.09,
             "rhs_mag_9k32_rocket", 0.08
-        ],[
+        ], [
             // Weapon accessories
             "rhs_acc_2dpZenit", 0.21,
             "rhs_acc_1p63", 0.20,
@@ -514,7 +514,7 @@ InsurgencyLootTable = [
             "rhs_VOG25", 0.73,
             "rhs_VOG25p", 0.65,
             "rhs_mag_9x18_8_57N181S", 0.40,
-            "rhs_mag_9x18_12_57N181S", 0.30]
+            "rhs_mag_9x18_12_57N181S", 0.30
         ], [
             // Launchers
             "rhs_weap_rpg26", 0.96,
@@ -527,8 +527,8 @@ InsurgencyLootTable = [
             "rhs_rpg7_PG7VR_mag", 0.43,
             "rhs_rpg7_OG7V_mag", 0.35,
             "rhs_rpg7_TBG7V_mag", 0.32,
-            "rhs_mag_9k38_rocket", 0.30]
-        ],[
+            "rhs_mag_9k38_rocket", 0.30
+        ], [
             // Weapon accessories
             "rhs_acc_2dpZenit", 0.51,
             "rhs_acc_1p63", 0.60,
@@ -553,7 +553,7 @@ InsurgencyLootTable = [
             "Medikit", 0.41,
             "ToolKit", 0.39
         ]
-    ,
+    ],
     // ------------ Colonel (No Insurgency colonels) ------------
     [
     ]
@@ -848,11 +848,11 @@ OpforLootTable = [
             "rhs_weap_ak103_gp25", 0.35,
             "rhs_weap_pkm", 0.15,
             "rhs_weap_svds", 0.13,
-            "rhs_weap_asval", 0.10]
+            "rhs_weap_asval", 0.10
         ], [
             // Secondary weapons
             "rhs_weap_pya", 0.33,
-            "rhs_weap_pp2000", 0.17]
+            "rhs_weap_pp2000", 0.17
         ], [
             // Ammo
             "rhs_30Rnd_545x39_AK", 0.50,
@@ -2963,7 +2963,7 @@ BluforLootTable = [
             "rhsusf_mag_6Rnd_M441_HE", 0.25,
             "rhsusf_mag_6Rnd_M433_HEDP", 0.24,
             // XM2010
-            "rhsusf_5Rnd_300winmag_xm2010", 0.40,
+            "rhsusf_5Rnd_300winmag_xm2010", 0.40
         ], [
             // Launchers
             "rhs_weap_fgm148", 0.45,
