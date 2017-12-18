@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1330;
+		nextID=1340;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=46;
+		nextID=47;
 	};
 	class Camera
 	{
-		pos[]={5443.9292,75.462746,2772.7986};
-		dir[]={-0.084184147,-0.7515583,0.65430969};
-		up[]={-0.09591148,0.65961719,0.74545509};
-		aside[]={0.99184674,-7.2494731e-007,0.12761313};
+		pos[]={6073.1016,66.870697,2928.1421};
+		dir[]={0.39895019,-0.76355851,0.50781286};
+		up[]={0.47173351,0.64568877,0.6004563};
+		aside[]={0.78637236,-8.4252679e-007,-0.61779153};
 	};
 };
 binarizationWanted=0;
@@ -350,7 +350,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=271;
+		items=281;
 		class Item0
 		{
 			dataType="Group";
@@ -6621,7 +6621,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6083.7642,51.048088,2952.2078};
+				position[]={6080.7344,50.858067,2960.085};
 				angles[]={0.0072011296,0,0.043971907};
 			};
 			side="Empty";
@@ -6637,8 +6637,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6090.3999,50.999184,2952.4302};
-				angles[]={0.0072011296,0,0.047164604};
+				position[]={6086.9351,50.780399,2960.3535};
+				angles[]={0.0072011296,0,0.043971907};
 			};
 			side="Empty";
 			flags=4;
@@ -6647,7 +6647,6 @@ class Mission
 			};
 			id=1216;
 			type="rhsgref_weapons_crate";
-			atlOffset=-7.6293945e-006;
 		};
 		class Item228
 		{
@@ -7451,7 +7450,7 @@ class Mission
 			name="VehStore4_heliSpawn";
 			type="Empty";
 			colorName="ColorBlack";
-			angle=178.28641;
+			angle=178.28639;
 			id=1316;
 		};
 		class Item267
@@ -7502,7 +7501,7 @@ class Mission
 			name="GunStore1_objSpawn";
 			type="Empty";
 			colorName="ColorBlack";
-			angle=294.02676;
+			angle=294.02673;
 			id=1328;
 		};
 		class Item270
@@ -7521,6 +7520,176 @@ class Mission
 			};
 			id=1329;
 			type="Land_ATM_01_malden_F";
+		};
+		class Item271
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6092.8091,51.398518,2943.0476};
+				angles[]={0.011198638,0,0.044770103};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1330;
+			type="rhs_mags_crate";
+			atlOffset=7.6293945e-006;
+		};
+		class Item272
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6090.6973,51.305374,2942.9165};
+				angles[]={0.011198638,0,0.044770103};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1331;
+			type="rhs_gear_crate";
+			atlOffset=3.8146973e-006;
+		};
+		class Item273
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6093.0103,51.571049,2941.4451};
+				angles[]={0.011198638,0,0.044770103};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1332;
+			type="rhs_launcher_crate";
+			atlOffset=3.8146973e-006;
+		};
+		class Item274
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6090.0498,51.441772,2941.1462};
+				angles[]={0.011198638,0,0.044770103};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1333;
+			type="rhs_spec_weapons_crate";
+			atlOffset=1.1444092e-005;
+		};
+		class Item275
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6091.7437,51.529381,2940.0984};
+				angles[]={0.011198638,0,0.044770103};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1334;
+			type="rhs_weapon_crate";
+			atlOffset=-1.1444092e-005;
+		};
+		class Item276
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6083.748,51.682846,2942.9333};
+				angles[]={0.011198638,0,0.043971907};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1335;
+			type="rhsusf_mags_crate";
+			atlOffset=1.1444092e-005;
+		};
+		class Item277
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6083.8193,51.712708,2940.3081};
+				angles[]={0.0080009829,0,0.047165871};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1336;
+			type="rhsusf_gear_crate";
+			atlOffset=1.1444092e-005;
+		};
+		class Item278
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6080.937,51.551643,2943.4307};
+				angles[]={0.0080009829,0,0.047165871};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1337;
+			type="rhsusf_launcher_crate";
+			atlOffset=-1.9073486e-005;
+		};
+		class Item279
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6081.0771,51.580051,2940.7114};
+				angles[]={0.0080009829,0,0.047165871};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1338;
+			type="rhsusf_spec_weapons_crate";
+			atlOffset=2.2888184e-005;
+		};
+		class Item280
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6082.4111,51.665936,2937.843};
+				angles[]={0.0080009829,0,0.047165871};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1339;
+			type="rhsusf_weapon_crate";
+			atlOffset=-3.8146973e-006;
 		};
 	};
 };
