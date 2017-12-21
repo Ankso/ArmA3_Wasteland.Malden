@@ -66,6 +66,9 @@ while {true} do {
         // All groups are dead, dungeon has been completed
         if (_aliveGroups <= 0) then {
         	diag_log format ["SERVER - Dungeons manager: Dungeon %1 has been completed, respawning in %2 seconds.", _dungeonInfo select 0, _dungeonInfo select 10];
+            // Trigger vehicle/box spawns
+            [_dungeonInfo] call WI_fnc_SpawnDungeonVehicles;
+            [_dungeonInfo] call WI_fnc_SpawnDungeonAmmoBox;
         	// Inform all players that the dungeon has been completed.
         	format ["Enemy positions in %1 are now clear, and will be for at least %2 hours.", _dungeonInfo select 0, (_dungeonInfo select 10) / 3600] remoteExec ["systemChat"];
         	// Remove dungeon from the array while the dungeon in respawn timer.
@@ -76,13 +79,16 @@ while {true} do {
         		private ["_dungeonInfo", "_groups"];
 
         		_dungeonInfo = _this select 0;
-        		uiSleep _dungeonInfo select 10; // Dungeon respawn timer in seconds specified in DungeonsInfo.
+                diag_log format ["SERVER - Dungeons manager: Dungeon %1 will respawn in %2 seconds.", _dungeonInfo select 0, _dungeonInfo select 10];
+        		uiSleep (_dungeonInfo select 10); // Dungeon respawn timer in seconds specified in DungeonsInfo.
 
         		_groups = _dungeonInfo call WI_fnc_InitDungeon;
 				// Add dungeon to initialized dungeons array
 				dungeons pushBack [_dungeonInfo, _groups];
 				diag_log format ["SERVER - Dungeons Manager: Dungeon %1 has been respawned.", _dungeonInfo select 0];
         	};
+        } else {
+            [_dungeonInfo, _groups] spawn WI_fnc_BroadcastDungeonNPCsMarkers; // Broadcast some markers to players inside dungeon area with aprox. position of NPC groups.
         };
         _i = _i + 1;
         sleep 1;

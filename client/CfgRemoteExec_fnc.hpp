@@ -66,3 +66,6 @@ class A3W_fnc_setVehicleAmmoDef {};
 class A3W_fnc_unflip {};
 class APOC_srv_startAirdrop { allowedTargets = 2; };
 class JTS_FNC_SENT {};
+
+// Wasted Island
+class WI_fnc_createDungeonMarker {};

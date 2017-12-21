@@ -12,21 +12,20 @@
 InsurgencyUnitTypes = [
 	// Difficulty level 1
 	[
-		"rhsgref_ins_g_specialist_aa", "rhsgref_ins_g_grenadier_rpg", "rhsgref_ins_g_machinegunner", "rhsgref_ins_g_militiaman_mosin",
+		"rhsgref_ins_g_specialist_aa", "rhsgref_ins_g_machinegunner", "rhsgref_ins_g_militiaman_mosin", "rhsgref_ins_g_rifleman_RPG26",
 		"rhsgref_ins_g_medic", "rhsgref_ins_g_rifleman_akm", "rhsgref_ins_g_rifleman_aks74", "rhsgref_ins_g_rifleman_aksu",
-		"rhsgref_ins_g_grenadier", "rhsgref_ins_g_rifleman_RPG26", "rhsgref_ins_g_engineer"
+		"rhsgref_ins_g_grenadier"
 	],
 	// Difficulty level 2
 	[
-		"rhsgref_ins_g_specialist_aa", "rhsgref_ins_g_grenadier_rpg", "rhsgref_ins_g_machinegunner", "rhsgref_ins_g_militiaman_mosin",
-		"rhsgref_ins_g_rifleman", "rhsgref_ins_g_saboteur", "rhsgref_ins_g_sniper", "rhsgref_ins_g_spotter"
+		"rhsgref_ins_g_specialist_aa", "rhsgref_ins_g_machinegunner", "rhsgref_ins_g_militiaman_mosin", "rhsgref_ins_g_sniper",
+		"rhsgref_ins_g_rifleman", "rhsgref_ins_g_saboteur"
 	],
 	// Difficulty level 3
 	[
-		"rhsgref_ins_g_specialist_aa", "rhsgref_ins_g_grenadier_rpg", "rhsgref_ins_g_machinegunner", "rhsgref_ins_g_militiaman_mosin",
+		"rhsgref_ins_g_specialist_aa", "rhsgref_ins_g_machinegunner", "rhsgref_ins_g_militiaman_mosin", "rhsgref_ins_g_sniper",
 		"rhsgref_ins_g_medic", "rhsgref_ins_g_rifleman_akm", "rhsgref_ins_g_rifleman_aks74", "rhsgref_ins_g_rifleman_aksu",
-		"rhsgref_ins_g_grenadier", "rhsgref_ins_g_rifleman_RPG26", "rhsgref_ins_g_engineer",
-		"rhsgref_ins_g_rifleman", "rhsgref_ins_g_saboteur", "rhsgref_ins_g_sniper", "rhsgref_ins_g_spotter"
+		"rhsgref_ins_g_grenadier", "rhsgref_ins_g_rifleman_RPG26", "rhsgref_ins_g_rifleman", "rhsgref_ins_g_saboteur"
 	]
 ];
 

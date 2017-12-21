@@ -159,7 +159,7 @@ class RespawnSelectionDialog
 		{
 			idc = respawn_Random_Button;
 			onButtonClick = ""; // Action is now set dynamically in loadRespawnDialog.sqf using buttonSetAction
-			text = "Random";
+			text = "Safe zone";
 
 			// relative to RspnTopBar
 			#define RspnRandomButton_X (RspnTopBar_X + CENTER(RspnTopBar_W, RspnButton_W)) // centered under RspnTopBar

@@ -122,17 +122,19 @@ WI_fnc_CreateRandomPatrol = {
 
 		_skill = 0.33;
 		_accuracy = 0.75;
+		_rank = "PRIVATE";
 		switch (_difficulty) do {
-			case 1: { _skill = 0.33; _accuracy = 0.75; };
-			case 2: { _skill = 0.41; _accuracy = 0.87; };
-			case 3: { _skill = 0.50; _accuracy = 1;    };
-			case 4: { _skill = 0.65; _accuracy = 1.15; };
+			case 1: { _skill = 0.33; _accuracy = 0.75; _rank = "PRIVATE";    };
+			case 2: { _skill = 0.41; _accuracy = 0.87; _rank = "CORPORAL";   };
+			case 3: { _skill = 0.50; _accuracy = 1;    _rank = "SERGEANT";   };
+			case 4: { _skill = 0.65; _accuracy = 1.15; _rank = "LIEUTENANT"; };
 		};
 
 		_unit allowFleeing 0;
 		_unit setSkill _skill;
 		_unit setSkill ["aimingAccuracy", (_unit skill "aimingAccuracy") * _accuracy];
 		_unit setSkill ["courage", 1];
+		_unit setRank _rank;
 		_unit addEventHandler ["Killed", server_playerDied];
 		_unit setVariable ["ficticiousFaction", _faction, true];
 	};
@@ -299,17 +301,19 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 
 		_skill = 0.33;
 		_accuracy = 0.75;
+		_rank = "PRIVATE";
 		switch (_difficulty) do {
-			case 1: { _skill = 0.33; _accuracy = 0.75; };
-			case 2: { _skill = 0.41; _accuracy = 0.87; };
-			case 3: { _skill = 0.50; _accuracy = 1;    };
-			case 4: { _skill = 0.65; _accuracy = 1.15; };
+			case 1: { _skill = 0.33; _accuracy = 0.75; _rank = "PRIVATE";    };
+			case 2: { _skill = 0.41; _accuracy = 0.87; _rank = "CORPORAL";   };
+			case 3: { _skill = 0.50; _accuracy = 1;    _rank = "SERGEANT";   };
+			case 4: { _skill = 0.65; _accuracy = 1.15; _rank = "LIEUTENANT"; };
 		};
 
 		_unit allowFleeing 0;
 		_unit setSkill _skill;
 		_unit setSkill ["aimingAccuracy", (_unit skill "aimingAccuracy") * _accuracy];
 		_unit setSkill ["courage", 1];
+		_unit setRank _rank;
 		_unit addEventHandler ["Killed", server_playerDied];
 		_unit setVariable ["ficticiousFaction", _faction, true];
 	};

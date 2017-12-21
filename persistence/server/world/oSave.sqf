@@ -126,6 +126,7 @@ while {true} do
 
 	uiSleep _savingInterval;
 
+/*
 	// Mine saving
 	if (_mineSavingOn) then
 	{
@@ -164,4 +165,5 @@ while {true} do
 
 		[_oldIDs, _mineCount] call fn_postMineSave;
 	};
+*/
 };

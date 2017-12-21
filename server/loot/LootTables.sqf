@@ -3018,3 +3018,512 @@ BluforLootTable = [
         ]
     ]
 ];
+
+InsurgencyVehiclesLootTable = [
+    // Light vehicles
+    [
+        "rhsgref_ins_g_uaz_dshkm_chdkz", 1,
+        "rhsgref_ins_g_gaz66_ammo", 1,
+        "rhsgref_ins_g_uaz_spg9", 0.75,
+        "rhsgref_ins_g_gaz66_zu23", 0.30,
+        "rhsgref_ins_g_ural_zu23", 0.25
+    ],
+    // Light armored vehicles
+    [
+        "rhsgref_BRDM2_HQ_ins_g", 1,
+        "rhsgref_BRDM2_ins_g", 0.85,
+        "rhsgref_ins_g_btr60", 0.60,
+        "rhsgref_ins_g_btr70", 0.40
+    ],
+    // Medium armored vehicles
+    [
+        "rhsgref_ins_g_bmp1", 1,
+        "rhsgref_ins_g_bmp1d", 0.8,
+        "rhsgref_ins_g_bmp1k", 0.7,
+        "rhsgref_ins_g_bmp1p", 0.6,
+        "rhsgref_ins_g_bmp2e", 1,
+        "rhsgref_ins_g_bmp2", 1,
+        "rhsgref_ins_g_bmp2d", 0.7,
+        "rhsgref_ins_g_bmp2k", 0.6
+    ],
+    // Heavy armored vehicles (tanks)
+    [
+        "rhsgref_ins_g_t72ba", 1,
+        "rhsgref_ins_g_t72bb", 0.8,
+        "rhsgref_ins_g_t72bc", 0.5
+    ],
+    // Transport helicopters
+    [
+        "rhsgref_ins_g_Mi8amt", 1
+    ],
+    // Armed helicopters
+    [
+        // No armed helis for insurgents
+    ],
+    // Planes
+    [
+        // No planes for insurgents
+    ]
+];
+
+OpforVehiclesLootTable = [
+    // Light vehicles
+    [
+        "rhsusf_m1025_d_m2", 1,
+        "rhsusf_m1025_d_Mk19", 0.4
+    ],
+    // Light armored vehicles
+    [
+        "rhsusf_M1220_M2_usarmy_d", 0.8,
+        "rhsusf_M1230_M2_usarmy_d", 0.7,
+        "rhsusf_M1232_M2_usarmy_d", 0.6,
+        "rhsusf_M1237_M2_usarmy_d", 0.5,
+        "rhsusf_M1220_MK19_usarmy_d", 0.3,
+        "rhsusf_M1237_MK19_usarmy_d", 0.2,
+        "rhsusf_m113d_usarmy_supply", 0.8,
+        "rhsusf_m113d_usarmy", 0.95
+    ],
+    // Medium armored vehicles
+    [
+        "rhsusf_M1117_O", 1,
+        "rhsusf_M1117_D", 1,
+        "RHS_M2A2", 0.3,
+        "RHS_M2A2_BUSKI", 0.2,
+        "RHS_M2A3", 0.15,
+        "RHS_M2A3_BUSKI", 0.1,
+        "RHS_M2A3_BUSKIII", 0.08,
+        "RHS_M6", 0.05
+    ],
+    // Heavy armored vehicles (tanks)
+    [
+        "rhsusf_m1a1aimd_usarmy", 1,
+        "rhsusf_m1a1aim_tuski_d", 0.8,
+        "rhsusf_m1a2sep1d_usarmy", 0.6,
+        "rhsusf_m1a2sep1tuskid_usarmy", 0.5,
+        "rhsusf_m1a2sep1tuskiid_usarmy", 0.3,
+        "rhsusf_m1a1fep_d", 0.9
+    ],
+    // Transport helicopters
+    [
+        "RHS_UH60M2_d", 1,
+        "RHS_MELB_MH6M", 1,
+        "RHS_UH1Y_UNARMED_d", 1,
+        "RHS_UH60M_ESSS2_d", 1,
+        "RHS_UH60M_d", 0.8,
+        "RHS_CH_47F_10", 0.9,
+        "rhsusf_CH53E_USMC_D", 0.9,
+        "RHS_UH1Y_FFAR_d", 0.7,
+        "RHS_UH1Y_d", 0.5
+    ],
+    // Armed helicopters
+    [
+        "RHS_MELB_AH6M", 1,
+        "RHS_AH64D_noradar", 0.3,
+        "RHS_AH1Z", 0.3,
+        "RHS_AH64D", 0.1
+    ],
+    // Planes
+    [
+        "rhsusf_f22a", 1,
+        "RHS_A10", 0.2
+    ]
+];
+
+BluforVehiclesLootTable = [
+    // Light vehicles
+    [
+        "rhs_tigr_sts_msv", 1
+    ],
+    // Light armored vehicles
+    [
+        "rhsgref_BRDM2_vdv", 1,
+        "rhsgref_BRDM2_ATGM_vdv", 0.4,
+        "rhs_btr60_msv", 1,
+        "rhs_btr70_msv", 0.9,
+        "rhs_btr80_msv", 0.7,
+        "rhs_btr80a_msv", 0.5
+    ],
+    // Medium armored vehicles
+    [
+        "rhs_bmp1_msv", 1,
+        "rhs_bmp1d_msv", 0.9,
+        "rhs_bmp1k_msv", 0.8,
+        "rhs_bpm1p_msv", 0.7,
+        "rhs_bmp2_msv", 0.7,
+        "rhs_bmp2e_msv", 0.7,
+        "rhs_bmp2d_msv", 0.6,
+        "rhs_bmp2k_msv", 0.6,
+        "rhs_brm1k_msv", 0.6,
+        "rhs_Ob_681_2", 0.6,
+        "rhs_bmp3_msv", 0.5,
+        "rhs_bmp3_late_msv", 0.45,
+        "rhs_bmp3m_msv", 0.3,
+        "rhs_bmp3era_msv", 0.2,
+        "rhs_sprut_vdv", 0.15
+    ],
+    // Heavy armored vehicles (tanks)
+    [
+        "rhs_t72ba_tv", 1,
+        "rhs_t72bb_tv", 0.95,
+        "rhs_t72bc_tv", 0.9,
+        "rhs_t72bd_tv", 0.2,
+        "rhs_t80", 0.8,
+        "rhs_t80a", 0.75,
+        "rhs_t80b", 0.70,
+        "rhs_t80bk", 0.70,
+        "rhs_t80bv", 0.70,
+        "rhs_t80bvk", 0.70,
+        "rhs_t80u", 0.70,
+        "rhs_t80u45m", 0.65,
+        "rhs_t80ue1", 0.65,
+        "rhs_t80uk", 0.65,
+        "rhs_t80um", 0.2,
+        "rhs_t90_tv", 0.7,
+        "rhs_t90a_tv", 0.2,
+        "rhs_zsu234_aa", 0.1
+    ],
+    // Transport helicopters
+    [
+        "RHS_Mi8AMT_vdv", 1,
+        "RHS_Mi8mt_vdv", 1,
+        "RHS_Mi8mt_Cargo_vdv", 1,
+        "RHS_Mi8MTV3_vdv", 0.5,
+        "RHS_Mi8mtv3_Cargo_vdv", 0.5,
+        "RHS_Mi8MTV3_Heavy_vdv", 0.2
+    ],
+    // Armed helicopters
+    [
+        "RHS_Mi24P_vdv", 1,
+        "RHS_Mi24V_vdv", 1,
+        "RHS_Ka52_vvsc", 0.2,
+        "rhs_mi28n_vvsc", 0.2
+    ],
+    // Planes
+    [
+        "rhs_mig29s_vvsc", 1,
+        "RHS_Su25SM_vvsc", 0.2
+    ]
+];
+
+InsurgencyAmmoBoxLootTable = [
+    // Difficulty level 1
+    [   // [Item, quantity] (100% drop)
+        ["rhs_30Rnd_545x39_AK", 20],
+        ["rhs_30Rnd_545x39_AK_no_tracers", 20],
+        ["rhs_30Rnd_545x39_7N10_AK", 5],
+        ["rhs_30Rnd_545x39_7N22_AK", 5],
+        ["rhs_30Rnd_762x39mm", 20],
+        ["rhs_30Rnd_762x39mm_89", 5],
+        ["rhs_30Rnd_762x39mm_U", 5],
+        ["rhs_100Rnd_762x54mmR", 10],
+        ["rhsgref_5Rnd_792x57_kar98k", 20],
+        ["rhsgref_5Rnd_762x54_m38", 20],
+        ["rhsgref_10Rnd_792x57_m76", 10],
+        ["rhs_mag_9x18_8_57N181S", 10],
+        ["rhs_VOG25", 10],
+        ["rhs_vg40op_white", 5],
+        ["rhs_GRD40_white", 5],
+        ["rhs_acc_ekp1", 2],
+        ["rhs_acc_ekp8_02", 2],
+        ["rhs_acc_ekp8_02_pkas", 1],
+        ["rhs_acc_2dpZenit", 1],
+        ["rhs_mag_rgd5", 5],
+        ["rhs_mag_nspn_yellow", 5],
+        ["FirstAidKit", 10],
+        ["Binocular", 5]
+    ],
+    // Level 2
+    [
+        ["rhs_30Rnd_545x39_AK", 20],
+        ["rhs_30Rnd_545x39_AK_no_tracers", 20],
+        ["rhs_30Rnd_545x39_7N10_AK", 5],
+        ["rhs_30Rnd_545x39_7N22_AK", 5],
+        ["rhs_30Rnd_762x39mm", 20],
+        ["rhs_30Rnd_762x39mm_89", 5],
+        ["rhs_30Rnd_762x39mm_U", 5],
+        ["rhs_100Rnd_762x54mmR", 10],
+        ["rhs_100Rnd_762x54mmR_7N13", 5],
+        ["rhsgref_5Rnd_792x57_kar98k", 20],
+        ["rhsgref_5Rnd_762x54_m38", 20],
+        ["rhsgref_10Rnd_792x57_m76", 10],
+        ["rhs_mag_9x18_8_57N181S", 10],
+        ["rhs_VOG25", 10],
+        ["rhs_VOG25p", 5],
+        ["rhs_vg40op_white", 5],
+        ["rhs_GRD40_white", 5],
+        ["rhs_acc_ekp1", 2],
+        ["rhs_acc_ekp8_02", 2],
+        ["rhs_acc_ekp8_02_pkas", 1],
+        ["rhs_acc_2dpZenit", 1],
+        ["rhs_acc_pso1m2", 1],
+        ["rhs_mag_rgd5", 5],
+        ["rhs_mag_fakel", 5],
+        ["rhs_mag_nspn_yellow", 5],
+        ["FirstAidKit", 10],
+        ["Binocular", 5],
+        ["rhs_rpg7_PG7VL_mag", 2]
+    ],
+    // Level 3
+    [
+        ["rhs_30Rnd_545x39_AK", 20],
+        ["rhs_30Rnd_545x39_7N10_AK", 5],
+        ["rhs_30Rnd_545x39_7N22_AK", 5],
+        ["rhs_30Rnd_762x39mm_89", 10],
+        ["rhs_30Rnd_762x39mm_U", 5],
+        ["rhs_100Rnd_762x54mmR", 10],
+        ["rhs_100Rnd_762x54mmR_7N13", 5],
+        ["rhsgref_5Rnd_792x57_kar98k", 20],
+        ["rhsgref_5Rnd_762x54_m38", 20],
+        ["rhsgref_10Rnd_792x57_m76", 10],
+        ["rhs_mag_9x18_8_57N181S", 10],
+        ["rhs_VOG25", 10],
+        ["rhs_VOG25p", 5],
+        ["rhs_vg40op_white", 5],
+        ["rhs_GRD40_white", 5],
+        ["rhs_acc_ekp1", 2],
+        ["rhs_acc_ekp8_02", 2],
+        ["rhs_acc_ekp8_02_pkas", 1],
+        ["rhs_acc_2dpZenit", 1],
+        ["rhs_acc_pso1m2", 1],
+        ["rhs_acc_pso1m21", 1],
+        ["rhs_mag_rgd5", 10],
+        ["rhs_mag_fakel", 10],
+        ["rhs_mag_fakels", 5],
+        ["rhs_mag_nspn_yellow", 5],
+        ["FirstAidKit", 10],
+        ["Binocular", 5],
+        ["rhs_rpg7_PG7VL_mag", 5],
+        ["rhs_mag_9k32_rocket", 2]
+    ]
+];
+
+OpforAmmoBoxLootTable = [
+    // Difficulty level 1
+    [
+        // [Item, quantity] (100% drop rate)
+        ["rhs_30Rnd_545x39_AK", 15],
+        ["rhs_30Rnd_545x39_AK_no_tracers", 15],
+        ["rhs_30Rnd_545x39_7N10_AK", 10],
+        ["rhs_30Rnd_545x39_7N22_AK", 10],
+        ["rhs_30Rnd_545x39_7U1_AK", 5],
+        ["rhs_30Rnd_762x39mm", 15],
+        ["rhs_30Rnd_762x39mm_tracer", 15],
+        ["rhs_30Rnd_762x39mm_89", 10],
+        ["rhs_30Rnd_762x39mm_U", 10],
+        ["rhs_10Rnd_762x54mmR_7N1", 5],
+        ["rhs_100Rnd_762x54mmR", 5],
+        ["rhs_VOG25", 10],
+        ["rhs_VOG25p", 5],
+        ["rhs_vg40op_green", 5],
+        ["rhs_GRD40_green", 5],
+        ["rhs_VG40MD_Green", 5],
+        ["rhs_mag_9x19_17", 10],
+        ["rhs_rpg7_PG7VL_mag", 2],
+        ["rhs_acc_2dpZenit", 2],
+        ["rhs_acc_ekp1", 2],
+        ["rhs_acc_ekp8_02", 1],
+        ["rhs_acc_ekp8_02_pkas", 1],
+        ["rhs_acc_pso1m2", 1],
+        ["rhs_acc_rakursPM", 1],
+        ["rhsusf_acc_compm4", 2],
+        ["rhs_mag_rgd5", 10],
+        ["rhs_mag_nspn_green", 5],
+        ["FirstAidKit", 10],
+        ["Binocular", 5]
+    ],
+    // Level 2
+    [
+        ["rhs_30Rnd_545x39_AK", 10],
+        ["rhs_30Rnd_545x39_AK_no_tracers", 10],
+        ["rhs_30Rnd_545x39_7N10_AK", 15],
+        ["rhs_30Rnd_545x39_7N22_AK", 15],
+        ["rhs_30Rnd_545x39_7U1_AK", 10],
+        ["rhs_30Rnd_762x39mm", 10],
+        ["rhs_30Rnd_762x39mm_tracer", 10],
+        ["rhs_30Rnd_762x39mm_89", 15],
+        ["rhs_30Rnd_762x39mm_U", 15],
+        ["rhs_10Rnd_762x54mmR_7N1", 10],
+        ["rhs_100Rnd_762x54mmR", 5],
+        ["rhs_VOG25", 10],
+        ["rhs_VOG25p", 10],
+        ["rhs_vg40op_green", 5],
+        ["rhs_GRD40_green", 5],
+        ["rhs_VG40MD_Green", 5],
+        ["rhs_mag_9x19_17", 10],
+        ["rhs_rpg7_PG7VL_mag", 4],
+        ["rhs_mag_9k32_rocket", 2],
+        ["rhs_acc_2dpZenit", 2],
+        ["rhs_acc_ekp1", 2],
+        ["rhs_acc_ekp8_02", 1],
+        ["rhs_acc_ekp8_02_pkas", 1],
+        ["rhs_acc_pso1m2", 2],
+        ["rhs_acc_pso1m21", 1],
+        ["rhs_acc_rakursPM", 1],
+        ["rhsusf_acc_compm4", 2],
+        ["rhs_mag_rgd5", 15],
+        ["rhs_mag_nspn_green", 5],
+        ["FirstAidKit", 10],
+        ["Binocular", 5]
+    ],
+    // Level 3
+    [
+        ["rhs_30Rnd_545x39_AK", 10],
+        ["rhs_30Rnd_545x39_AK_no_tracers", 10],
+        ["rhs_30Rnd_545x39_7N10_AK", 15],
+        ["rhs_30Rnd_545x39_7N22_AK", 15],
+        ["rhs_30Rnd_545x39_7U1_AK", 10],
+        ["rhs_30Rnd_762x39mm", 10],
+        ["rhs_30Rnd_762x39mm_tracer", 10],
+        ["rhs_30Rnd_762x39mm_89", 15],
+        ["rhs_30Rnd_762x39mm_U", 15],
+        ["rhs_10Rnd_762x54mmR_7N1", 10],
+        ["rhs_100Rnd_762x54mmR_7N13", 5],
+        ["rhs_100Rnd_762x54mmR_7N13", 2],
+        ["rhs_100Rnd_762x54mmR_7N26", 2],
+        ["rhs_100Rnd_762x54mmR_7BZ3", 2],
+        ["rhs_VOG25", 10],
+        ["rhs_VOG25p", 10],
+        ["rhs_vg40op_green", 5],
+        ["rhs_GRD40_green", 5],
+        ["rhs_VG40MD_Green", 5],
+        ["rhs_mag_9x19_17", 10],
+        ["rhs_rpg7_PG7VL_mag", 4],
+        ["rhs_mag_9k32_rocket", 2],
+        ["rhs_acc_2dpZenit", 2],
+        ["rhs_acc_ekp1", 2],
+        ["rhs_acc_ekp8_02", 2],
+        ["rhs_acc_ekp8_02_pkas", 2],
+        ["rhs_acc_pso1m2", 2],
+        ["rhs_acc_pso1m21", 2],
+        ["rhs_acc_rakursPM", 2],
+        ["rhsusf_acc_compm4", 2],
+        ["rhs_acc_dtk4short", 1],
+        ["rhs_mag_rgd5", 15],
+        ["rhs_mag_nspn_green", 5],
+        ["FirstAidKit", 10],
+        ["Binocular", 5]
+    ]
+];
+
+BluforAmmoBoxLootTable = [
+    // Difficulty level 1
+    [
+        // [Item, quantity] (100% drop)
+        ["rhs_mag_30Rnd_556x45_Mk318_Stanag", 15],
+        ["rhs_mag_30Rnd_556x45_Mk262_Stanag", 15],
+        ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 5],
+        ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 5],
+        ["rhs_200rnd_556x45_M_SAW", 5],
+        ["rhsusf_100Rnd_556x45_soft_pouch", 5],
+        ["rhsusf_50Rnd_762x51", 5],
+        ["rhsusf_100Rnd_762x51", 5],
+        ["rhsusf_20Rnd_762x51_m993_Mag", 10],
+        ["rhsusf_mag_10Rnd_STD_50BMG_M33", 3],
+        ["rhsusf_5Rnd_00Buck", 10],
+        ["rhsusf_8Rnd_00Buck", 10],
+        ["rhsusf_mag_40Rnd_46x30_FMJ", 10],
+        ["rhsusf_5Rnd_300winmag_xm2010", 5],
+        ["rhsusf_mag_15Rnd_9x19_JHP", 10],
+        ["rhsusf_mag_7x45acp_MHP", 10],
+        ["rhs_mag_M441_HE", 10],
+        ["rhs_mag_M433_HEDP", 5],
+        ["rhs_mag_M662_red", 5],
+        ["rhs_mag_M713_red", 5],
+        ["rhs_mag_smaw_HEAA", 2],
+        ["rhsusf_acc_ACOG", 1],
+        ["rhsusf_acc_eotech_552", 3],
+        ["rhsusf_acc_compm4", 3],
+        ["rhsusf_acc_eotech_xps3", 1],
+        ["rhsusf_acc_harris_bipod", 2],
+        ["rhs_mag_m67", 10],
+        ["rhs_mag_m18_red", 5],
+        ["rhs_mag_m7a3_cs", 5],
+        ["Binocular", 5],
+        ["FirstAidKit", 10]
+    ],
+    // Level 2
+    [
+        // [Item, quantity] (100% drop)
+        ["rhs_mag_30Rnd_556x45_Mk318_Stanag", 12],
+        ["rhs_mag_30Rnd_556x45_Mk262_Stanag", 12],
+        ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 10],
+        ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10],
+        ["rhs_200rnd_556x45_B_SAW", 5],
+        ["rhsusf_100Rnd_556x45_soft_pouch", 5],
+        ["rhsusf_50Rnd_762x51", 5],
+        ["rhsusf_100Rnd_762x51", 5],
+        ["rhsusf_100Rnd_762x51_m61_ap", 2],
+        ["rhsusf_100Rnd_762x51_m80a1epr", 2],
+        ["rhsusf_20Rnd_762x51_m993_Mag", 10],
+        ["rhsusf_20Rnd_762x51_m118_special_Mag", 3],
+        ["rhsusf_mag_10Rnd_STD_50BMG_M33", 3],
+        ["rhsusf_5Rnd_00Buck", 10],
+        ["rhsusf_8Rnd_00Buck", 10],
+        ["rhsusf_mag_40Rnd_46x30_FMJ", 10],
+        ["rhsusf_5Rnd_300winmag_xm2010", 5],
+        ["rhsusf_mag_15Rnd_9x19_JHP", 10],
+        ["rhsusf_mag_7x45acp_MHP", 10],
+        ["rhs_mag_M441_HE", 10],
+        ["rhs_mag_M433_HEDP", 10],
+        ["rhs_mag_M662_red", 5],
+        ["rhs_mag_M713_red", 5],
+        ["rhs_mag_smaw_HEAA", 2],
+        ["rhs_fim92_mag", 2],
+        ["rhsusf_acc_ACOG", 2],
+        ["rhsusf_acc_eotech_552", 3],
+        ["rhsusf_acc_compm4", 3],
+        ["rhsusf_acc_eotech_xps3", 1],
+        ["rhsusf_acc_harris_bipod", 2],
+        ["rhs_mag_m67", 10],
+        ["rhs_mag_m18_red", 5],
+        ["rhs_mag_m7a3_cs", 5],
+        ["Binocular", 5],
+        ["FirstAidKit", 10]
+    ],
+    // Level 3
+    [
+        // [Item, quantity] (100% drop)
+        ["rhs_mag_30Rnd_556x45_Mk318_Stanag", 12],
+        ["rhs_mag_30Rnd_556x45_Mk262_Stanag", 12],
+        ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 10],
+        ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10],
+        ["rhs_200rnd_556x45_B_SAW", 5],
+        ["rhsusf_100Rnd_556x45_soft_pouch", 5],
+        ["rhsusf_50Rnd_762x51", 4],
+        ["rhsusf_100Rnd_762x51", 4],
+        ["rhsusf_100Rnd_762x51_m61_ap", 3],
+        ["rhsusf_100Rnd_762x51_m80a1epr", 3],
+        ["rhsusf_20Rnd_762x51_m993_Mag", 10],
+        ["rhsusf_20Rnd_762x51_m118_special_Mag", 5],
+        ["rhsusf_mag_10Rnd_STD_50BMG_M33", 5],
+        ["rhsusf_5Rnd_00Buck", 10],
+        ["rhsusf_5Rnd_Slug", 5],
+        ["rhsusf_8Rnd_00Buck", 10],
+        ["rhsusf_8Rnd_Slug", 5],
+        ["rhsusf_mag_40Rnd_46x30_FMJ", 10],
+        ["rhsusf_5Rnd_300winmag_xm2010", 5],
+        ["rhsusf_mag_15Rnd_9x19_JHP", 10],
+        ["rhsusf_mag_7x45acp_MHP", 10],
+        ["rhs_mag_M441_HE", 15],
+        ["rhs_mag_M433_HEDP", 10],
+        ["rhs_mag_M662_red", 5],
+        ["rhs_mag_M713_red", 5],
+        ["rhs_mag_smaw_HEAA", 2],
+        ["rhs_mag_smaw_HEDP", 1],
+        ["rhs_m72a7_mag", 2],
+        ["rhs_fim92_mag", 2],
+        ["rhs_fgm148_magazine_AT", 1],
+        ["rhsusf_acc_ACOG", 2],
+        ["rhsusf_acc_eotech_552", 3],
+        ["rhsusf_acc_compm4", 3],
+        ["rhsusf_acc_eotech_xps3", 1],
+        ["rhsusf_acc_harris_bipod", 2],
+        ["rhs_mag_m67", 10],
+        ["rhs_mag_m18_red", 5],
+        ["rhs_mag_m7a3_cs", 5],
+        ["rhsusf_mag_6Rnd_M433_HEDP", 2],
+        ["rhsusf_mag_6Rnd_M576_Buckshot", 2],
+        ["Binocular", 5],
+        ["FirstAidKit", 10]
+    ]
+]

@@ -102,7 +102,7 @@ if (_vehicleSavingOn) then
 };
 
 uiSleep _savingInterval;
-
+/*
 // Mine saving
 if (_mineSavingOn) then
 {
@@ -143,3 +143,4 @@ if (_mineSavingOn) then
 
 	[_oldIDs, _mineCount] call fn_postMineSave;
 };
+*/

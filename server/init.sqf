@@ -517,3 +517,9 @@ if !(["A3W_hcObjCleanup"] call isConfigOn) then
 	// Start clean-up loop
 	execVM "server\WastelandServClean.sqf";
 };
+
+/*
+["INSURGENCY", "CORPORAL", 1000] spawn WI_fnc_SimulateLoot;
+["INSURGENCY", "SERGEANT", 1000] spawn WI_fnc_SimulateLoot;
+["INSURGENCY", "CAPTAIN", 1000] spawn WI_fnc_SimulateLoot;
+*/

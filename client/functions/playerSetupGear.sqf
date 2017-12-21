@@ -7,18 +7,6 @@
 private ["_player", "_uniform", "_vest", "_headgear", "_goggles"];
 _player = _this;
 
-// Clothing is now defined in "client\functions\getDefaultClothing.sqf"
-
-_uniform = [_player, "uniform"] call getDefaultClothing;
-_vest = [_player, "vest"] call getDefaultClothing;
-_headgear = [_player, "headgear"] call getDefaultClothing;
-_goggles = [_player, "goggles"] call getDefaultClothing;
-
-if (_uniform != "") then { _player addUniform _uniform };
-if (_vest != "") then { _player addVest _vest };
-if (_headgear != "") then { _player addHeadgear _headgear };
-if (_goggles != "") then { _player addGoggles _goggles };
-
 sleep 0.1;
 
 // Remove GPS
@@ -30,34 +18,53 @@ _player unlinkItem "ItemGPS";
 // Remove NVG
 if (hmd _player != "") then { _player unlinkItem hmd _player };
 
-// Add NVG
-// _player linkItem "NVGoggles";
-
-_player addBackpack "B_AssaultPack_rgr";
-
-_player addMagazine "rhsusf_mag_15Rnd_9x19_FMJ";
-_player addWeapon "rhsusf_weap_m9";
-_player addMagazine "rhsusf_mag_15Rnd_9x19_FMJ";
-_player addMagazine "rhsusf_mag_15Rnd_9x19_FMJ";
-_player addMagazine "rhsusf_mag_15Rnd_9x19_FMJ";
-_player addItem "FirstAidKit";
-_player selectWeapon "rhsusf_weap_m9";
-
 switch (true) do
 {
 	case (["_medic_", typeOf _player] call fn_findString != -1):
 	{
-		_player removeItem "FirstAidKit";
-		_player addItem "Medikit";
+		_player forceAddUniform selectRandom ["U_BG_Guerrilla_6_1", "U_BG_Guerilla2_1", "U_BG_Guerilla2_2", "U_BG_Guerilla2_3", "U_BG_Guerilla3_1", "U_Marshal"];
+		_player addBackpack "rhs_sidor";
+		_player addMagazine "rhs_30Rnd_762x39mm";
+		_player addWeapon "rhs_weap_akm";
+		_player addMagazine "rhs_30Rnd_762x39mm";
+		_player addMagazine "rhs_30Rnd_762x39mm";
+		_player addMagazine "rhs_30Rnd_762x39mm";
+		for "_i" from 1 to 10 do {
+			_player addItem "FirstAidKit";
+		};
+		_player selectWeapon "rhs_weap_akm";
 	};
 	case (["_engineer_", typeOf _player] call fn_findString != -1):
 	{
-		_player addItem "MineDetector";
-		_player addItem "Toolkit";
+		_player forceAddUniform selectRandom ["U_BG_Guerrilla_6_1", "U_BG_Guerilla2_1", "U_BG_Guerilla2_2", "U_BG_Guerilla2_3", "U_BG_Guerilla3_1", "U_Marshal"];
+		_player addBackpack "rhs_assault_umbts_engineer_empty";
+		_player addMagazine "rhs_30Rnd_545x39_AK";
+		_player addWeapon "rhs_weap_aks74u";
+		_player addMagazine "rhs_30Rnd_545x39_AK";
+		_player addMagazine "rhs_30Rnd_545x39_AK";
+		_player addMagazine "rhs_30Rnd_545x39_AK";
+		for "_i" from 1 to 2 do {
+			_player addItem "FirstAidKit";
+		};
+		_player selectWeapon "rhs_weap_aks74u";
+		for "_i" from 1 to 3 do {
+			_player addItem "rhs_mag_rgd5";
+		};
 	};
 	case (["_sniper_", typeOf _player] call fn_findString != -1):
 	{
+		_player forceAddUniform "U_BG_Leader"; // Cammo clothes for sniper...
 		_player addWeapon "Binocular";
+		_player addBackpack "rhs_sidor";
+		_player addMagazine "rhsgref_5Rnd_792x57_kar98k";
+		_player addWeapon "rhs_weap_kar98k";
+		_player addMagazine "rhsgref_5Rnd_792x57_kar98k";
+		_player addMagazine "rhsgref_5Rnd_792x57_kar98k";
+		_player addMagazine "rhsgref_5Rnd_792x57_kar98k";
+		for "_i" from 1 to 2 do {
+			_player addItem "FirstAidKit";
+		};
+		_player selectWeapon "rhs_weap_kar98k";
 	};
 };
 

@@ -26,4 +26,4 @@ if (_vehicleSavingOn) then
 	fn_restoreSavedVehicle = [_worldDir, "fn_restoreSavedVehicle.sqf"] call mf_compile;
 };
 
-if (_mineSavingOn) then { fn_deleteMines = [_methodDir, "deleteMines.sqf"] call mf_compile };
+// if (_mineSavingOn) then { fn_deleteMines = [_methodDir, "deleteMines.sqf"] call mf_compile };

@@ -51,7 +51,7 @@ if (_vehicleSavingOn) then
 	fn_saveVehicle = [_methodDir, "saveVehicle.sqf"] call mf_compile;
 	fn_postVehicleSave = [_methodDir, "postVehicleSave.sqf"] call mf_compile;
 };
-
+/*
 if (_mineSavingOn) then
 {
 	fn_isMineSaveable = [_worldDir, "fn_isMineSaveable.sqf"] call mf_compile;
@@ -82,7 +82,7 @@ if (_mineSavingOn) then
 		};
 	} forEach ("configName _x isKindOf 'MineBase'" configClasses (configFile >> "CfgVehicles"));
 };
-
+*/
 if (_savingMethod == "iniDB") then
 {
 	_objFileName = "Objects" call PDB_objectFileName;
@@ -99,11 +99,12 @@ if (_savingMethod == "iniDB") then
 	{
 		[_vehFileName, "Info", "VehCount", 0] call PDB_write;
 	};
-
+	/*
 	if (_mineSavingOn && !(_mineFileName call PDB_exists)) then
 	{
 		[_mineFileName, "Info", "MineCount", 0] call PDB_write;
 	};
+	*/
 };
 
 fn_oSaveOnce = [_worldDir, "oSaveOnce.sqf"] call mf_compile; // do not call fn_oSaveOnce outside oSave.sqf or fn_saveAllObjects

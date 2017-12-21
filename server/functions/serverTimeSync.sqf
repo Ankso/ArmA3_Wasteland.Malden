@@ -8,8 +8,8 @@
 
 if (!isServer) exitWith {};
 
-_timeMultiDay = ["A3W_timeMultiplierDay", 1] call getPublicVar;
-_timeMultiNight = ["A3W_timeMultiplierNight", 1] call getPublicVar;
+_timeMultiDay = 7.5; // ["A3W_timeMultiplierDay", 1] call getPublicVar;
+_timeMultiNight = 12.0; // ["A3W_timeMultiplierNight", 1] call getPublicVar;
 
 while {true} do
 {
