@@ -8,7 +8,7 @@
  */
 
 WI_fnc_ProcessLootForUnit = {
-	private ["_unit", "_rank", "_faction", "_lootTable", "_lootTableIndex", "_currentLoot", "_hasDrop"];
+	private ["_unit", "_rank", "_faction", "_lootTable", "_lootTableIndex", "_currentLoot", "_hasDrop", "_lootBox"];
 
 	_unit = _this select 0;
 	_rank = rank _unit;
@@ -38,26 +38,32 @@ WI_fnc_ProcessLootForUnit = {
 			case "COLONEL": { _lootTableIndex = 6; };
 			default {};
 		};
+		// Spawn a small box to put the items inside - spawning them in the corpses gives a lot of problems
+		_lootBox = "rhs_3Ya40_1_single" createVehicle (position _unit);
+		clearItemCargoGlobal _lootBox;
+		clearWeaponCargoGlobal _lootBox;
+		clearMagazineCargoGlobal _lootBox;
+		clearBackpackCargoGlobal _lootBox;
 		// First, main weapon. There's a 100% of a main weapon drop.
 		_currentLoot = (_lootTable select _lootTableIndex) select 0;
 		_weapon = selectRandomWeighted _currentLoot;
-		_unit addWeapon (_weapon);
+		_lootBox addWeaponCargoGlobal [_weapon, 1];
 		// Add at least some ammo for the dropped weapon
 		_mag = ((getArray (configFile >> "CfgWeapons" >> _weapon >> "magazines")) select 0) call getBallMagazine;
-		_unit addMagazines [_mag, ceil (random 2)];
+		_lootBox addMagazineCargoGlobal [_mag, ceil (random 2)];
 		// Weapon accessories. 100% chance to drop 1-2.
 		_currentLoot = (_lootTable select _lootTableIndex) select 5;
-		_unit addItemToVest (selectRandomWeighted _currentLoot);
-		if (random 1 >= 0.50) then {
-			_unit addItemToVest (selectRandomWeighted _currentLoot);
+		_lootBox addItemCargoGlobal [(selectRandomWeighted _currentLoot), 1];
+		if ((random 1) < 0.25) then {
+			_lootBox addItemCargoGlobal [(selectRandomWeighted _currentLoot), 1];
 		};
 		// Explosives loot. Roll here. If we must drop something, drop 1-2.
 		_currentLoot = (_lootTable select _lootTableIndex) select 6;
 		_hasDrop = _currentLoot call WI_fnc_RollDropChances;
 		if (_hasDrop) then {
-			_unit addItemToVest (selectRandomWeighted _currentLoot);
-			if (random 1 >= 0.50) then {
-				_unit addItemToVest (selectRandomWeighted _currentLoot);
+			_lootBox addItemCargoGlobal [(selectRandomWeighted _currentLoot), 1];
+			if ((random 1) >= 0.50) then {
+				_lootBox addItemCargoGlobal [(selectRandomWeighted _currentLoot), 1];
 			};
 		};
 		// Secondary weapons. Roll our chances.
@@ -65,36 +71,38 @@ WI_fnc_ProcessLootForUnit = {
 		_hasDrop = _currentLoot call WI_fnc_RollDropChances;
 		if (_hasDrop) then {
 			_weapon = selectRandomWeighted _currentLoot;
-			_unit addWeapon (_weapon);
+			_lootBox addWeaponCargoGlobal [(_weapon), 1];
 			// Add at least some ammo for the dropped weapon
 			_mag = ((getArray (configFile >> "CfgWeapons" >> _weapon >> "magazines")) select 0) call getBallMagazine;
-			_unit addMagazines [_mag, ceil (random 2)];
+			_lootBox addMagazineCargoGlobal [_mag, ceil (random 2)];
 		};
 		// Ammo loot. A unit can drop 1-2 mag types (+1 from weapn drop), 1-2 of each one.
 		_currentLoot = (_lootTable select _lootTableIndex) select 2;
 		_magsDrop = ceil (random 2);
 		for "_i" from 0 to _magsDrop do {
-			_unit addMagazines [selectRandomWeighted _currentLoot, ceil (random 2)];
+			_lootBox addMagazineCargoGlobal [selectRandomWeighted _currentLoot, ceil (random 2)];
 		};
 		// Launcher drop. We must roll.
 		_currentLoot = (_lootTable select _lootTableIndex) select 3;
 		_hasDrop = _currentLoot call WI_fnc_RollDropChances;
 		if (_hasDrop) then {
-			_unit addWeapon (selectRandomWeighted _currentLoot);
+			_lootBox addWeaponCargoGlobal [(selectRandomWeighted _currentLoot), 1];
 		};
 		// Launcher ammo drop, also roll first.
 		_currentLoot = (_lootTable select _lootTableIndex) select 4;
 		_hasDrop = _currentLoot call WI_fnc_RollDropChances;
 		if (_hasDrop) then {
-			_unit addMagazines [(selectRandomWeighted _currentLoot), ceil (random 2)]; // 1-2 rockets
+			_lootBox addMagazineCargoGlobal [(selectRandomWeighted _currentLoot), ceil (random 2)]; // 1-2 rockets
 		};
 		// Finally, items (NVG, binoculars...). Last bit of RNG :)
 		_currentLoot = (_lootTable select _lootTableIndex) select 7;
 		_hasDrop = _currentLoot call WI_fnc_RollDropChances;
 		if (_hasDrop) then {
-			_unit addItemToBackpack (selectRandomWeighted _currentLoot);
+			_lootBox addItemCargoGlobal [(selectRandomWeighted _currentLoot), 1];
 		};
 		// Loot drop has been completed.
+		// Set box for despawn after 30 minutes
+		_lootBox spawn { uiSleep 1800; deleteVehicle _this; };
 	} else {
 		diag_log format["SERVER ERROR: Unit %1 has triggered loot drop system but has no faction assigned!"];
 	};

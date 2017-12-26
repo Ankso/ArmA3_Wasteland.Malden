@@ -38,6 +38,7 @@ while {_i < MAX_DUNGEONS} do {
 		_groups = _dungeonInfo call WI_fnc_InitDungeon;
 		// Add dungeon to initialized dungeons array
 		dungeons pushBack [_dungeonInfo, _groups];
+        _count = _count + 1;
 	};
     _i = _i + 1;
 };
@@ -70,7 +71,7 @@ while {true} do {
             [_dungeonInfo] call WI_fnc_SpawnDungeonVehicles;
             [_dungeonInfo] call WI_fnc_SpawnDungeonAmmoBox;
         	// Inform all players that the dungeon has been completed.
-        	format ["Enemy positions in %1 are now clear, and will be for at least %2 hours.", _dungeonInfo select 0, (_dungeonInfo select 10) / 3600] remoteExec ["systemChat"];
+        	format ["Enemy positions in %1 are now clear, and will be for at least %2 hours.", _dungeonInfo select 0, round ((_dungeonInfo select 10) / 3600)] remoteExec ["systemChat"];
         	// Remove dungeon from the array while the dungeon in respawn timer.
         	dungeons set [_i, -1];
         	dungeons = dungeons - [-1];

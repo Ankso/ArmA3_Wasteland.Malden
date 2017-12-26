@@ -107,6 +107,9 @@ WI_fnc_CreateRandomPatrol = {
 	{
 		// First waypoint is also the spawn point
 		_uPos = (_waypoints select 0);
+		// Add _i meters to x/y to avoid units spawning on top of each other (AI gets bugged...)
+        _uPos set [0, (_uPos select 0) + _i];
+        _uPos set [1, (_uPos select 1) + _i];
 		_unit = nil;
 		// Spawn first the group leader/officer
 		if (_i == 1) then {
@@ -272,7 +275,11 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 	clearWeaponCargoGlobal _vehicle1;
 	_vehicle1 setVariable ["R3F_LOG_disabled", true, true];
 	_vehicle1 setVariable ["A3W_skipAutoSave", true, true];
-	[_vehicle1] spawn {sleep 10; (_this select 0) allowDamage true;};
+	_vehicle1 spawn {sleep 10; _this allowDamage true;};
+	_vehicle1 spawn {
+		sleep 1200;
+		while {!isPlayer (driver _this)} do {_this setFuel 1; sleep 1200;};
+	};
 	_vehicle2 = (_vehicleTypes select 1) createVehicle (_waypoints select 1);
 	_vehicle2 allowDamage false;
 	_group addVehicle _vehicle2;
@@ -280,12 +287,19 @@ WI_fnc_CreateRandomMotorizedPatrol = {
 	clearWeaponCargoGlobal _vehicle2;
 	_vehicle2 setVariable ["R3F_LOG_disabled", true, true];
 	_vehicle2 setVariable ["A3W_skipAutoSave", true, true];
-	[_vehicle2] spawn {sleep 10; (_this select 0) allowDamage true;};
+	_vehicle2 spawn {sleep 10; _this allowDamage true;};
+	_vehicle2 spawn {
+		sleep 1200;
+		while {!isPlayer (driver _this)} do {_this setFuel 1; sleep 1200;};
+	};
 
 	for "_i" from 1 to _unitsCount do
 	{
 		// First waypoint is also the spawn point
 		_uPos = (_waypoints select 1);
+		// Add _i meters to x/y to avoid units spawning on top of each other (AI gets bugged...)
+        _uPos set [0, (_uPos select 0) + _i];
+        _uPos set [1, (_uPos select 1) + _i];
 		_unit = nil;
 		// Spawn first the group leader/officer
 		if (_i == 1) then {

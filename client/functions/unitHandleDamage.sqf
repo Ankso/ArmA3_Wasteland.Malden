@@ -10,7 +10,7 @@
 params ["_unit", "_selection", "_damage", "_source", "_ammo"];
 
 // Abort and ignore damage if inside range of safe zone
-if(_unit inArea "safe_zone_marker") exitWith {0};
+if (_unit inArea "safe_zone_marker") exitWith {0};
 
 if (_unit getVariable ["playerSpawning", false]) exitWith {0};
 

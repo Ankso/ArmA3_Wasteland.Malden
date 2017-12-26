@@ -19,7 +19,7 @@ mf_items_cratemoney_nearest =
 {
 	private "_target";
 	_target = cursorTarget;
-	if (player distance _target <= 3 && {_target isKindOf "ReammoBox_F"}) then { _target } else { objNull }
+	if (player distance _target <= 3 && {_target isKindOf "ReammoBox_F"} && typeOf _target != "rhs_3Ya40_1_single") then { _target } else { objNull }
 } call mf_compile;
 
 

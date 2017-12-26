@@ -12,7 +12,6 @@
  * @param _dungeonInfo array Information about the dungeon parameters as saved in server/pve/dungeons/DungeonInfo.sqf
  * @return array Returns all the AI groups created for the dungeon.
  */
-
 WI_fnc_InitDungeon = {
     if (!isServer) exitWith {};
 
@@ -153,6 +152,9 @@ WI_fnc_CreateDungeonPatrol = {
     {
         // First waypoint is also the spawn point
         _uPos = (_waypoints select 0);
+        // Add _i meters to x/y to avoid units spawning on top of each other (AI gets bugged...)
+        _uPos set [0, (_uPos select 0) + _i];
+        _uPos set [1, (_uPos select 1) + _i];
         _unit = nil;
         // Spawn first the group leader/officer
         if (_i == 1) then {
@@ -228,6 +230,7 @@ WI_fnc_CreateDungeonStaticGroup = {
     _unitsCount = _this select 1;
     _faction = _this select 3;
     _inBuilding = _this select 4;
+    _buildingPositions = [];
 
     switch (_faction) do {
         case "INSURGENCY": {
@@ -248,6 +251,11 @@ WI_fnc_CreateDungeonStaticGroup = {
     // Find nearest building
     if (_inBuilding) then {
         _buildingPositions = [nearestBuilding _position] call BIS_fnc_buildingPositions;
+    };
+
+    if (count _buildingPositions < _unitsCount) then {
+        diag_log format ["ERROR: Cannot create %1 soldiers in building at %2 because the building doesn't have enought positions.", _unitsCount, _position];
+        _unitsCount = count _buildingPositions;
     };
 
     for "_i" from 1 to _unitsCount do
@@ -433,7 +441,7 @@ WI_fnc_SpawnDungeonVehicles = {
                     }
                 };
                 // Spawn vehicle
-                _vehicle = createVehicle [_vehicleClass, _pos];
+                _vehicle = _vehicleClass createVehicle _pos;
                 _vehicle setVariable [call vChecksum, true];
 
                 clearMagazineCargoGlobal _vehicle;
@@ -444,7 +452,7 @@ WI_fnc_SpawnDungeonVehicles = {
                 _vehicle addEventHandler ["GetIn", fn_vehicleGetInOutServer];
                 _vehicle addEventHandler ["GetOut", fn_vehicleGetInOutServer];
                 _vehicle addEventHandler ["Killed", fn_vehicleKilledServer];
-                if (_vehicle getVariable ["A3W_resupplyTruck", false] || getNumber (configFile >> "CfgVehicles" >> _class >> "transportAmmo") > 0) then
+                if (_vehicle getVariable ["A3W_resupplyTruck", false] || getNumber (configFile >> "CfgVehicles" >> _vehicleClass >> "transportAmmo") > 0) then
                 {
                     [_vehicle] remoteExecCall ["A3W_fnc_setupResupplyTruck", 0, _vehicle];
                 };
@@ -456,8 +464,6 @@ WI_fnc_SpawnDungeonVehicles = {
         };
         _i = _i + 1;
     };
-
-    _vehicles;
 };
 
 /*
@@ -484,11 +490,11 @@ WI_fnc_SpawnDungeonAmmoBox = {
     // Look for the ammo box marker
     _markerName = format ["%1_box_spawn", (_dungeonInfo select 1)];
     _pos = getMarkerPos _markerName;
-    if ((_waypoint select 0) != 0 && (_waypoint select 1) != 0) then {
+    if ((_pos select 0) != 0 && (_pos select 1) != 0) then {
         // Roll our chances
         if (random 100 < _dropChance) then {
             // Spawn an ammo box
-            _box = createVehicle ["rhs_weapon_crate", _pos];
+            _box = "rhs_weapon_crate" createVehicle _pos;
 
             clearMagazineCargoGlobal _box;
             clearWeaponCargoGlobal _box;
@@ -508,10 +514,13 @@ WI_fnc_SpawnDungeonAmmoBox = {
             }
         };
     };
-
-    _box;
 };
 
+/* 
+ * Calls a script client-side to the players inside the dungeon area for creating markers with the aprox location of the surviving AI.
+ * @param _dungeonInfo array Dungeon info as in DungeonInfo.sqf
+ * @param _groups [object] Array of groups in the dungeon.
+ */
 WI_fnc_BroadcastDungeonNPCsMarkers = {
     private ["_dungeonInfo", "_groups", "_players", "_allPlayers"];
 
@@ -520,26 +529,31 @@ WI_fnc_BroadcastDungeonNPCsMarkers = {
     _players = [];
     _allPlayers = allPlayers - entities "HeadlessClient_F";
 
-    for "_i" from 0 to (count _allPlayers) do {
+    for "_i" from 0 to (count _allPlayers) - 1 do {
         if ((_allPlayers select _i) inArea (_dungeonInfo select 1)) then {
             _players pushBack (_allPlayers select _i);
         };
     };
 
-    for "_i" from 0 to (count _groups) do {
-        // Get random NPC from group
+    if (count _players > 0) then {
+        _units = [];
         _alive = [];
-        _units = units (_groups select _i);
-        for "_j" from 0 to (count _units) do {
-            if (alive (_units select _j)) then {
-                _alive pushBack (_units select _j);
+        for "_i" from 0 to (count _groups) - 1 do {
+            // Get all NPCs from group
+            _tmpUnits = units (_groups select _i);
+            for "_j" from 0 to (count _tmpUnits) - 1 do {
+                if (alive (_tmpUnits select _j)) then {
+                    _alive pushBack (_tmpUnits select _j);
+                };
+                _units pushBack (_tmpUnits select _j);
             };
         };
-        if (count _alive > 0) then {
-            _npc = selectRandom _alive;
-
-            // Broadcast marker to players inside the dungeon zone
-            [getPos _npc, 60, _i] remoteExec ["WI_fnc_CreateDungeonMarker"];
+        // If 20% or less of the units are alive, show markers.
+        if ((count _alive) <= ((count _units) * 0.2)) then {
+            for "_i" from 0 to (count _alive) - 1 do {
+                // Broadcast marker to players inside the dungeon zone
+                [getPos (_alive select _i), 60, _i] remoteExec ["WI_fnc_CreateDungeonMarker", _players];
+            };
         };
     };
 };

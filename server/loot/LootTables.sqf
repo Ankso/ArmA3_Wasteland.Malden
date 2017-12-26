@@ -3124,8 +3124,8 @@ OpforVehiclesLootTable = [
     ],
     // Planes
     [
-        "rhsusf_f22a", 1,
-        "RHS_A10", 0.2
+        "rhs_mig29s_vvsc", 1,
+        "RHS_Su25SM_vvsc", 0.2
     ]
 ];
 
@@ -3200,8 +3200,8 @@ BluforVehiclesLootTable = [
     ],
     // Planes
     [
-        "rhs_mig29s_vvsc", 1,
-        "RHS_Su25SM_vvsc", 0.2
+        "rhsusf_f22a", 1,
+        "RHS_A10", 0.2
     ]
 ];
 
@@ -3215,7 +3215,7 @@ InsurgencyAmmoBoxLootTable = [
         ["rhs_30Rnd_762x39mm", 20],
         ["rhs_30Rnd_762x39mm_89", 5],
         ["rhs_30Rnd_762x39mm_U", 5],
-        ["rhs_100Rnd_762x54mmR", 10],
+        ["rhs_100Rnd_762x54mmR", 5],
         ["rhsgref_5Rnd_792x57_kar98k", 20],
         ["rhsgref_5Rnd_762x54_m38", 20],
         ["rhsgref_10Rnd_792x57_m76", 10],
@@ -3241,8 +3241,8 @@ InsurgencyAmmoBoxLootTable = [
         ["rhs_30Rnd_762x39mm", 20],
         ["rhs_30Rnd_762x39mm_89", 5],
         ["rhs_30Rnd_762x39mm_U", 5],
-        ["rhs_100Rnd_762x54mmR", 10],
-        ["rhs_100Rnd_762x54mmR_7N13", 5],
+        ["rhs_100Rnd_762x54mmR", 3],
+        ["rhs_100Rnd_762x54mmR_7N13", 2],
         ["rhsgref_5Rnd_792x57_kar98k", 20],
         ["rhsgref_5Rnd_762x54_m38", 20],
         ["rhsgref_10Rnd_792x57_m76", 10],
@@ -3270,8 +3270,8 @@ InsurgencyAmmoBoxLootTable = [
         ["rhs_30Rnd_545x39_7N22_AK", 5],
         ["rhs_30Rnd_762x39mm_89", 10],
         ["rhs_30Rnd_762x39mm_U", 5],
-        ["rhs_100Rnd_762x54mmR", 10],
-        ["rhs_100Rnd_762x54mmR_7N13", 5],
+        ["rhs_100Rnd_762x54mmR", 3],
+        ["rhs_100Rnd_762x54mmR_7N13", 2],
         ["rhsgref_5Rnd_792x57_kar98k", 20],
         ["rhsgref_5Rnd_762x54_m38", 20],
         ["rhsgref_10Rnd_792x57_m76", 10],
@@ -3377,10 +3377,10 @@ OpforAmmoBoxLootTable = [
         ["rhs_30Rnd_762x39mm_89", 15],
         ["rhs_30Rnd_762x39mm_U", 15],
         ["rhs_10Rnd_762x54mmR_7N1", 10],
-        ["rhs_100Rnd_762x54mmR_7N13", 5],
         ["rhs_100Rnd_762x54mmR_7N13", 2],
-        ["rhs_100Rnd_762x54mmR_7N26", 2],
-        ["rhs_100Rnd_762x54mmR_7BZ3", 2],
+        ["rhs_100Rnd_762x54mmR_7N13", 2],
+        ["rhs_100Rnd_762x54mmR_7N26", 1],
+        ["rhs_100Rnd_762x54mmR_7BZ3", 1],
         ["rhs_VOG25", 10],
         ["rhs_VOG25p", 10],
         ["rhs_vg40op_green", 5],
@@ -3413,10 +3413,10 @@ BluforAmmoBoxLootTable = [
         ["rhs_mag_30Rnd_556x45_Mk262_Stanag", 15],
         ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 5],
         ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 5],
-        ["rhs_200rnd_556x45_M_SAW", 5],
+        ["rhs_200rnd_556x45_M_SAW", 3],
         ["rhsusf_100Rnd_556x45_soft_pouch", 5],
-        ["rhsusf_50Rnd_762x51", 5],
-        ["rhsusf_100Rnd_762x51", 5],
+        ["rhsusf_50Rnd_762x51", 3],
+        ["rhsusf_100Rnd_762x51", 3],
         ["rhsusf_20Rnd_762x51_m993_Mag", 10],
         ["rhsusf_mag_10Rnd_STD_50BMG_M33", 3],
         ["rhsusf_5Rnd_00Buck", 10],
@@ -3448,12 +3448,12 @@ BluforAmmoBoxLootTable = [
         ["rhs_mag_30Rnd_556x45_Mk262_Stanag", 12],
         ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 10],
         ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10],
-        ["rhs_200rnd_556x45_B_SAW", 5],
+        ["rhs_200rnd_556x45_B_SAW", 3],
         ["rhsusf_100Rnd_556x45_soft_pouch", 5],
-        ["rhsusf_50Rnd_762x51", 5],
-        ["rhsusf_100Rnd_762x51", 5],
-        ["rhsusf_100Rnd_762x51_m61_ap", 2],
-        ["rhsusf_100Rnd_762x51_m80a1epr", 2],
+        ["rhsusf_50Rnd_762x51", 3],
+        ["rhsusf_100Rnd_762x51", 2],
+        ["rhsusf_100Rnd_762x51_m61_ap", 1],
+        ["rhsusf_100Rnd_762x51_m80a1epr", 1],
         ["rhsusf_20Rnd_762x51_m993_Mag", 10],
         ["rhsusf_20Rnd_762x51_m118_special_Mag", 3],
         ["rhsusf_mag_10Rnd_STD_50BMG_M33", 3],
@@ -3487,12 +3487,12 @@ BluforAmmoBoxLootTable = [
         ["rhs_mag_30Rnd_556x45_Mk262_Stanag", 12],
         ["rhs_mag_30Rnd_556x45_M855A1_Stanag", 10],
         ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 10],
-        ["rhs_200rnd_556x45_B_SAW", 5],
+        ["rhs_200rnd_556x45_B_SAW", 3],
         ["rhsusf_100Rnd_556x45_soft_pouch", 5],
-        ["rhsusf_50Rnd_762x51", 4],
-        ["rhsusf_100Rnd_762x51", 4],
-        ["rhsusf_100Rnd_762x51_m61_ap", 3],
-        ["rhsusf_100Rnd_762x51_m80a1epr", 3],
+        ["rhsusf_50Rnd_762x51", 3],
+        ["rhsusf_100Rnd_762x51", 2],
+        ["rhsusf_100Rnd_762x51_m61_ap", 2],
+        ["rhsusf_100Rnd_762x51_m80a1epr", 2],
         ["rhsusf_20Rnd_762x51_m993_Mag", 10],
         ["rhsusf_20Rnd_762x51_m118_special_Mag", 5],
         ["rhsusf_mag_10Rnd_STD_50BMG_M33", 5],

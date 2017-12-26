@@ -111,7 +111,7 @@ vehicleInfo = "client\systems\vehicleStore\vehicleInfo.sqf" call mf_compile;
 weaponInfo = "client\systems\gunStore\weaponInfo.sqf" call mf_compile;
 
 // Dungeon specific functions
-WI_fnc_CreateDungeonMarker = "client\functions\fn_createDungeonMarker.sqf";
+WI_fnc_CreateDungeonMarker = "client\functions\fn_createDungeonMarker.sqf" call mf_compile;
 
 if (isNil "A3W_fnc_MP") then { A3W_fnc_MP = compile preprocessFileLineNumbers "\A3\functions_f\MP\fn_MP.sqf" };
 if (isNil "A3W_fnc_MPexec") then { A3W_fnc_MPexec = compile preprocessFileLineNumbers "\A3\functions_f\MP\fn_MPexec.sqf" };
